@@ -1,0 +1,62 @@
+# Site settings
+title: 七姑娘手记
+header-img: "img/Home.jpg"
+tagline: "cn"  
+description: "七姑娘|七姑娘手记"
+baseurl: ""
+url: "https://julyshi.github.io/Blogs"
+
+# About/contact
+owner: 
+  name: "July"
+  email: julyfly321520@163.com
+  bio: "七姑娘日记"
+
+# Data
+gavatar: img/favicon.png
+favicon: img/favicon.ico
+
+douban_username:
+twitter_username:
+github_username: JulyShi
+facebook_username: 
+weibo_username:
+zhihu_username:
+
+# Build settings  
+# use Github Flavored Markdown !important  
+# document: http://jekyllrb.com/docs/configuration/#kramdown  
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+paginate: 15
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+
+# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Asia/Shanghai
+
+# Defaults for posts
+defaults:
+    scope: 
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "七姑娘"
+      header-img: "img/bike.jpg" # We don't want posts without a header image, that whould mean white on white
+
+# Comments 
+comments :
+  provider : disqus
+  duoshuo :
+    short_name : cnfeat
+  disqus :
+      short_name : cnfeat
+
+# Analytics and webmaster tools stuff goes here
+google_analytics: UA-80884545-1
+google_verify:
+# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
+bing_verify:
+
+# Links to include in footer navigation
