@@ -5,13 +5,6 @@ description: "哈哈，你找到了我的文章基因库"
 header-img: "img/image6.jpg"  
 ---
 
-## 本页使用方法
-
-1. 在下面选一个你喜欢的词
-2. 点击它
-3. 相关的文章会「唰」地一声跳到页面顶端
-4. 马上试试？
-
 ## 文章分类
 
 
@@ -33,14 +26,4 @@ header-img: "img/image6.jpg"
 {% endfor %}
 </ul>
 
-<script src="/media/js/jquery.tagcloud.js" type="text/javascript" charset="utf-8"></script> 
-<script language="javascript">
-$.fn.tagcloud.defaults = {
-    size: {start: 1, end: 1, unit: 'em'},
-      color: {start: '#f8e0e6', end: '#ff3333'}
-};
 
-$(function () {
-    $('#tag_cloud a').tagcloud();
-});
-</script>
