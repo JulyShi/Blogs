@@ -60,3 +60,9 @@ google_verify:
 bing_verify:
 
 # Links to include in footer navigation
+
+
+# CSS
+sass:
+    sass_dir: _sass
+    style: compressed
