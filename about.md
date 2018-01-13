@@ -19,22 +19,22 @@ header-img: "img/dance.jpg"
 
 坚信简单的事情做久了，其实卓有成效，七姑娘一直在路上。
 
-
+---
 ## 微信公众号：七姑娘手记
+<i class="fa fa-weixin" aria-hidden="true"></i> 请扫描二维码：
 <center>
     <p><img src="{{site.baseurl }}/img/July-Wechat.jpg" align="center"></p>
 </center>
 
 ## Github
 
-地址：[https://julyshi.github.io/Blogs](https://julyshi.github.io/Blogs) 
-
-
-
+<i class="fa fa-github" aria-hidden="true"></i>
+github：[https://julyshi.github.io/Blogs](https://julyshi.github.io/Blogs) 
 
 
 ## 联系
 
-邮箱：julyfFly321520@163.com
+<i class="fa fa-envelope-o" aria-hidden="true"></i>
+mail：julyfly321520@163.com
 
 

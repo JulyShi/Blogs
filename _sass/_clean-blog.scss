@@ -1,49 +1,74 @@
-
-// Global Components
 body {
-    @include serif;
-    font-size: 16px;
-    color: $font-color-primary;
+    font-family: 'Lato', "Open Sans", "PingFang SC", "Microsoft YaHei", sans-serif;
+    line-height: 1.7;
+    font-size: 15px;
+    color: #404040;
     overflow-x: hidden;
 }
 
-// -- Typography
 p {
-    line-height: 1.5;
     margin: 30px 0;
-    a {
-        text-decoration: underline;
-    }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    @include sans-serif;
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Helvetica Neue", Arial, "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "WenQuanYi Micro Hei", SimSun, sans-serif;
+    line-height: 1.1;
     font-weight: 800;
 }
 
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    position: relative;
+    padding-left: 1em;
+}
+
+h1 {
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+h4 {
+    font-size: 18px;
+}
+
 a {
-    color: $gray-dark;
-    &:hover,
-    &:focus {
-        color: $brand-primary;
+    color: #2b79c3;
+    &:hover, &:focus {
+        color: #0085a1;
+    }
+    img {
+        &:hover, &:focus {
+            cursor: zoom-in;
+        }
     }
 }
 
-a img {
-    &:hover,
-    &:focus {
-        cursor: zoom-in;
-    }
+article {
+    overflow-x: hidden;
 }
 
 blockquote {
-    color: $gray;
-    font-style: italic;
+    color: #808080;
+    font-size: 0.95em;
+    margin: 20px 0 20px;
+    p {
+        margin: 0;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    select {
+        -webkit-appearance: none;
+        margin-top: 15px;
+        color: #44bff2;
+        border-color: #44bff2;
+        padding: 0em 0.4em;
+        background: white;
+    }
+}
+
+.table {
+    th, td {
+        border: 1px solid #eee !important;
+    }
 }
 
 hr.small {
@@ -53,7 +78,47 @@ hr.small {
     border-color: white;
 }
 
-// Navigation
+@media screen and (max-width: 500px) {
+    pre code {
+        display: block;
+        width: 500px;
+    }
+}
+
+.post-container {
+    background: rgba(221, 221, 221, 0.1);
+    a {
+        color: #2b79c3;
+        &:hover, &:focus {
+            color: #6bb4bf;
+        }
+    }
+    ul {
+        margin-bottom: 40px;
+    }
+    ol {
+        margin-bottom: 40px;
+        ol, ul {
+            margin-bottom: 5px;
+        }
+    }
+    ul {
+        ol, ul {
+            margin-bottom: 5px;
+        }
+    }
+    li {
+        p {
+            margin: 0;
+            margin-bottom: 5px;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            line-height: 2;
+            margin-top: 20px;
+        }
+    }
+}
+
 .navbar-custom {
     background: white;
     position: absolute;
@@ -61,45 +126,45 @@ hr.small {
     left: 0;
     width: 100%;
     z-index: 3;
-    @include sans-serif;
+    font-family: "Helvetica Neue", Arial, "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "WenQuanYi Micro Hei", SimSun, sans-serif;
+    line-height: 1.7;
     .navbar-brand {
         font-weight: 800;
     }
-    .nav {
-        li {
-            a {
-                text-transform: uppercase;
-                font-size: 12px;
-                font-weight: 800;
-                letter-spacing: 1px;
-            }
-        }
+    .nav li a {
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 1px;
     }
-    @media only screen and (min-width: 768px) {
+}
+
+@media only screen and (min-width: 768px) {
+    .navbar-custom {
         background: transparent;
         border-bottom: 1px solid transparent;
+        body {
+            font-size: 20px;
+        }
         .navbar-brand {
             color: white;
             padding: 20px;
-            &:hover,
-            &:focus {
-                color: $white-faded;
+            &:hover, &:focus {
+                color: rgba(255, 255, 255, 0.8);
             }
         }
-        .nav {
-            li {
-                a {
-                    color: white;
-                    padding: 20px;
-                    &:hover,
-                    &:focus {
-                        color: $white-faded;
-                    }
-                }
+        .nav li a {
+            color: white;
+            padding: 20px;
+            &:hover, &:focus {
+                color: rgba(255, 255, 255, 0.8);
             }
         }
     }
-    @media only screen and (min-width: 1170px) {
+}
+
+@media only screen and (min-width: 1170px) {
+    .navbar-custom {
         -webkit-transition: background-color 0.3s;
         -moz-transition: background-color 0.3s;
         transition: background-color 0.3s;
@@ -115,27 +180,21 @@ hr.small {
             /* when the user scrolls down, we hide the header right above the viewport */
             position: fixed;
             top: -61px;
-            background-color: fade(white, 90%);
-            border-bottom: 1px solid darken(white, 5%);
+            background-color: rgba(255, 255, 255, 0.9);
+            border-bottom: 1px solid #f2f2f2;
             -webkit-transition: -webkit-transform 0.3s;
             -moz-transition: -moz-transform 0.3s;
             transition: transform 0.3s;
             .navbar-brand {
-                color: $gray-dark;
-                &:hover,
-                &:focus {
-                    color: $brand-primary;
+                color: #404040;
+                &:hover, &:focus {
+                    color: #0085a1;
                 }
             }
-            .nav {
-                li {
-                    a {
-                        color: $gray-dark;
-                        &:hover,
-                        &:focus {
-                            color: $brand-primary;
-                        }
-                    }
+            .nav li a {
+                color: #404040;
+                &:hover, &:focus {
+                    color: #0085a1;
                 }
             }
         }
@@ -150,130 +209,174 @@ hr.small {
     }
 }
 
-// Header
 .intro-header {
     background: no-repeat center center;
-    background-color: $gray;
+    background-color: #808080;
     background-attachment: scroll;
-    @include background-cover; // NOTE: Background images are set within the HTML using inline CSS!
-    margin-bottom: 50px;
-    .site-heading,
-    .post-heading,
-    .page-heading {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    margin-bottom: 0px;
+    /* 0 on mobile, changed the setting*/
+    .site-heading, .post-heading, .page-heading {
         padding: 100px 0 50px;
         color: white;
-        @media only screen and (min-width: 768px) {
-            padding: 150px 0;
-        }
     }
-    .site-heading,
-    .page-heading {
+    .site-heading, .page-heading {
         text-align: center;
-        h1 {
-            margin-top: 0;
-            font-size: 50px;
-        }
-        .subheading {
-            font-size: 20px;
-            line-height: 1.1;
-            display: block;
-            @include sans-serif;
-            font-weight: 300;
-            margin: 10px 0 0;
-        }
-        @media only screen and (min-width: 768px) {
-            h1 {
-                font-size: 80px;
-            }
-        }
+    }
+    .site-heading h1, .page-heading h1 {
+        margin-top: 0;
+        font-size: 50px;
+    }
+    .site-heading .subheading, .page-heading .subheading {
+        font-family: "Helvetica Neue", Arial, "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "WenQuanYi Micro Hei", SimSun, sans-serif;
+        line-height: 1.7;
+        font-size: 20px;
+        line-height: 1.1;
+        display: block;
+        font-weight: 300;
+        margin: 10px 0 0;
     }
     .post-heading {
         h1 {
-            font-size: 35px;
+            font-size: 27px;
         }
-        .subheading,
-        .meta {
+        .subheading, .meta {
             line-height: 1.1;
             display: block;
         }
         .subheading {
-            @include sans-serif;
-            font-size: 24px;
+            font-family: "Helvetica Neue", Arial, "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "WenQuanYi Micro Hei", SimSun, sans-serif;
+            line-height: 1.7;
+            font-size: 17px;
+            font-weight: normal;
             margin: 10px 0 30px;
-            font-weight: 600;
+            margin-top: -5px;
         }
         .meta {
-            @include serif;
+            font-family: 'Lora', 'Times New Roman', serif;
             font-style: italic;
             font-weight: 300;
-            font-size: 20px;
+            font-size: 17px;
             a {
                 color: white;
             }
         }
-        @media only screen and (min-width: 768px) {
-            h1 {
-                font-size: 55px;
-            }
-            .subheading {
-                font-size: 30px;
-            }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .intro-header {
+        margin-bottom: 20px;
+        /* response on desktop */
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .intro-header {
+        .site-heading, .post-heading, .page-heading {
+            padding: 150px 0;
         }
     }
 }
 
-// Post Preview Pages
-.post-preview {
-    >a {
-        color: $gray-dark;
-        &:hover,
-        &:focus {
-            text-decoration: none;
-            color: $brand-primary;
-        }
-        >.post-title {
-            font-size: 30px;
-            margin-top: 30px;
-            margin-bottom: 10px;
-        }
-        >.post-content-preview {
-            font-size: 16px;
-            margin-top: 30px;
-            margin-bottom: 10px;
-            color: $font-color-primary;
-        }
-        >.post-subtitle {
-            margin: 0;
-            font-weight: 300;
-            margin-bottom: 10px;
+@media only screen and (min-width: 768px) {
+    .intro-header {
+        .site-heading h1, .page-heading h1 {
+            font-size: 65px;
         }
     }
-    >.post-meta {
-        color: $gray;
+}
+
+@media only screen and (min-width: 768px) {
+    .intro-header .post-heading {
+        h1 {
+            font-size: 50px;
+        }
+        .subheading {
+            font-size: 30px;
+        }
+        .meta {
+            font-size: 20px;
+        }
+    }
+}
+
+.post-preview > {
+    a {
+        color: #404040;
+        &:hover, &:focus {
+            text-decoration: none;
+            color: #2b79c3;
+        }
+        > {
+            .post-title {
+                font-size: 21px;
+                line-height: 1.3;
+                margin-top: 30px;
+                margin-bottom: 8px;
+            }
+            .post-subtitle {
+                font-size: 15px;
+                margin: 0;
+                font-weight: 300;
+                margin-bottom: 10px;
+            }
+        }
+    }
+    .post-meta {
+        font-family: 'Lora', 'Times New Roman', serif;
+        color: #696969;
+        text-align: right;
         font-size: 14px;
         font-style: italic;
         margin-top: 0;
-        text-align: right;
-        >a {
+        > a {
             text-decoration: none;
-            color: $gray-dark;
-            &:hover,
-            &:focus {
-                color: $brand-primary;
+            color: #404040;
+            &:hover, &:focus {
+                color: #2b79c3;
                 text-decoration: underline;
             }
         }
     }
-    @media only screen and (min-width: 768px) {
-        >a {
-            >.post-title {
-                font-size: 36px;
+}
+
+@media only screen and (min-width: 768px) {
+    .post-preview {
+        > a > {
+            .post-title {
+                font-size: 26px;
+                line-height: 1.3;
+                margin-bottom: 10px;
             }
+            .post-subtitle {
+                font-size: 16px;
+            }
+        }
+        .post-meta {
+            font-size: 14px;
         }
     }
 }
 
-// Sections
+.post-content-preview {
+    font-size: 13px;
+    font-style: normal;
+    color: #a3a3a3;
+    &:hover {
+        color: #46A5ED;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .post-content-preview {
+        font-size: 14px;
+    }
+}
+
 .section-heading {
     font-size: 36px;
     margin-top: 60px;
@@ -292,6 +395,7 @@ hr.small {
 }
 
 footer {
+    font-size: 20px;
     padding: 50px 0 65px;
     .list-inline {
         margin: 0;
@@ -301,18 +405,22 @@ footer {
         font-size: 14px;
         text-align: center;
         margin-bottom: 0;
+        a {
+            color: #93e1de;
+            &:hover, &:focus {
+                color: #44bff2;
+            }
+        }
     }
 }
 
-// Contact Form Styles
 .floating-label-form-group {
     font-size: 14px;
     position: relative;
     margin-bottom: 0;
     padding-bottom: 0.5em;
-    border-bottom: 1px solid $gray-light;
-    input,
-    textarea {
+    border-bottom: 1px solid #eeeeee;
+    input, textarea {
         z-index: 1;
         position: relative;
         padding-right: 0;
@@ -332,38 +440,37 @@ footer {
         margin: 0;
         font-size: 0.85em;
         line-height: 1.764705882em;
+        vertical-align: middle;
+        vertical-align: baseline;
         opacity: 0;
-        -webkit-transition: top 0.3s ease, opacity 0.3s ease;
-        -moz-transition: top 0.3s ease, opacity 0.3s ease;
-        -ms-transition: top 0.3s ease, opacity 0.3s ease;
-        transition: top 0.3s ease, opacity 0.3s ease;
-    }
-    &::not(:first-child) {
-        padding-left: 14px;
-        border-left: 1px solid $gray-light;
+        -webkit-transition: top 0.3s ease,opacity 0.3s ease;
+        -moz-transition: top 0.3s ease,opacity 0.3s ease;
+        -ms-transition: top 0.3s ease,opacity 0.3s ease;
+        transition: top 0.3s ease,opacity 0.3s ease;
     }
 }
 
-.floating-label-form-group-with-value {
-    label {
-        top: 0;
-        opacity: 1;
-    }
+/*.floating-label-form-group::not(:first-child) {
+  padding-left: 14px;
+  border-left: 1px solid #eeeeee;
+}*/
+
+.floating-label-form-group-with-value label {
+    top: 0;
+    opacity: 1;
 }
 
-.floating-label-form-group-with-focus {
-    label {
-        color: $brand-primary;
-    }
+.floating-label-form-group-with-focus label {
+    color: #2b79c3;
 }
 
 form .row:first-child .floating-label-form-group {
-    border-top: 1px solid $gray-light;
+    border-top: 1px solid #eeeeee;
 }
 
-// Button Styles
 .btn {
-    @include sans-serif;
+    font-family: "Helvetica Neue", Arial, "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "WenQuanYi Micro Hei", SimSun, sans-serif;
+    line-height: 1.7;
     text-transform: uppercase;
     font-size: 14px;
     font-weight: 800;
@@ -378,21 +485,19 @@ form .row:first-child .floating-label-form-group {
 }
 
 .btn-default {
-    &:hover,
-    &:focus {
-        background-color: $brand-primary;
-        border: 1px solid $brand-primary;
+    &:hover, &:focus {
+        background-color: #0085a1;
+        border: 1px solid #0085a1;
         color: white;
     }
 }
 
-// Pager Styling
 .pager {
     margin: 20px 0 0;
-    li {
-        >a,
-        >span {
-            @include sans-serif;
+    li > {
+        a, span {
+            font-family: "Helvetica Neue", Arial, "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "WenQuanYi Micro Hei", SimSun, sans-serif;
+            line-height: 1.7;
             text-transform: uppercase;
             font-size: 14px;
             font-weight: 800;
@@ -400,57 +505,80 @@ form .row:first-child .floating-label-form-group {
             padding: 10px 5px;
             background-color: white;
             border-radius: 0;
-            @media only screen and (min-width: 768px) {
-                font-size: 14px;
-                padding: 15px 25px;
-            }
         }
-        >a:hover,
-        >a:focus {
-            color: white;
-            background-color: $brand-primary;
-            border: 1px solid $brand-primary;
+        a {
+            color: #404040;
         }
     }
-    .disabled {
-        >a,
-        >a:hover,
-        >a:focus,
-        >span {
-            color: $gray;
-            background-color: $gray-dark;
+}
+
+@media only screen and (min-width: 768px) {
+    .pager li > {
+        a, span {
+            font-size: 14px;
+            padding: 15px 25px;
+        }
+    }
+}
+
+c .pager li > a:hover {
+    color: white;
+    background-color: #00c9d7;
+    border: 1px solid #00c9d7;
+}
+
+.pager {
+    li > a:focus {
+        color: white;
+        background-color: #00c9d7;
+        border: 1px solid #00c9d7;
+    }
+    .disabled > {
+        a {
+            color: #808080;
+            background-color: #404040;
+            cursor: not-allowed;
+            &:hover, &:focus {
+                color: #808080;
+                background-color: #404040;
+                cursor: not-allowed;
+            }
+        }
+        span {
+            color: #808080;
+            background-color: #404040;
             cursor: not-allowed;
         }
     }
 }
 
-// -- Highlight Color Customization
-::-moz-selection {
+::-moz-selection, ::selection {
     color: white;
     text-shadow: none;
-    background: $brand-primary;
+    background: #00c9d7;
 }
 
-::selection {
-    color: white;
-    text-shadow: none;
-    background: $brand-primary;
-}
-
-img::selection {
-    color: white;
-    background: transparent;
-}
-
-img::-moz-selection {
-    color: white;
-    background: transparent;
+img {
+    &::selection, &::-moz-selection {
+        color: white;
+        background: transparent;
+    }
 }
 
 body {
-    webkit-tap-highlight-color: $brand-primary;
+    webkit-tap-highlight-color: #00c9d7;
 }
 
+/* Optimize UserExperience */
+
+.navbar-default .navbar-toggle {
+    &:focus, &:hover {
+        background-color: inherit;
+    }
+    &:active {
+        background-color: #ddd;
+    }
+}
 
 /*  Back Top Button  */
 

@@ -1,16 +1,16 @@
 # Site settings
-title: 七姑娘手记
+title: 七姑娘手記
 header-img: "img/Home.jpg"
 tagline: "cn"  
-description: "七姑娘|七姑娘手记"
+description: "七姑娘|七姑娘手記"
 baseurl: ""
-url: "https://julyshi.github.io"
+url: "https://julysxy.com"
 
 # About/contact
 owner: 
   name: "七姑娘"
   email: julyfly321520@163.com
-  bio: "七姑娘日记"
+  bio: "七姑娘日記"
 
 # Data
 gavatar: img/favicon.png
