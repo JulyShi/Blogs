@@ -89,7 +89,7 @@
 
                 </ul>
                 <p class="copyright text-muted">
-                &copy; {{ site.time | date: '%Y' }} {{ site.owner.name }} ❖ Powered by Jekyll.
+                &copy; {{ site.time | date: '%Y' }} {{ site.owner.name }} ❖ All rights reserved.
                 </p>
             </div>
         </div>
@@ -112,5 +112,14 @@
 <!-- Highlight.js -->
 <script>
         hljs.initHighlightingOnLoad();
+</script>
+
+<!--audio source-->
+<script type="text/javascript" src="/src/vender/audio.min.js"></script>
+
+<script>
+    audiojs.events.ready(function() {
+        var as = audiojs.createAll();
+    });
 </script>
 
