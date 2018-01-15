@@ -46,12 +46,7 @@ defaults:
       header-img: "img/bike.jpg" # We don't want posts without a header image, that whould mean white on white
 
 # Comments 
-comments :
-  provider : disqus
-  duoshuo :
-    short_name :
-  disqus :
-      short_name :
+
 
 # Analytics and webmaster tools stuff goes here
 google_analytics: UA-80884545-1
