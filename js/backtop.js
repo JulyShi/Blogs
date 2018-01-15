@@ -1,15 +1,15 @@
 $(document).ready(function() {
 
     // hide #back-top first
-    $("#back-top").hide();
+    //$("#back-top").hide();
 
     // fade in #back-top
     $(function() {
         $(window).scroll(function() {
             if ($(this).scrollTop() > 100) {
-                $('#back-top').fadeIn();
+                $('#back-top').css('bottom','30px');
             } else {
-                $('#back-top').fadeOut();
+                $('#back-top').css('bottom', '9999px');
             }
         });
 

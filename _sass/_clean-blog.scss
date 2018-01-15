@@ -583,23 +583,39 @@ body {
 #back-top {
     position: fixed;
     bottom: 30px;
-    margin-left: 880px;
+    right: 0;
+    // margin-left: 880px;
     z-index: 1;
+    transition: bottom 3s;
     a {
-        width: 54px;
-        height: 54px;
+        //width: 54px;
+        //height: 54px;
         display: block;
-        background: #ddd url(../img/Back-Top_Arrow.png) no-repeat center center;
-        background-color: #aaa;
+        // background: #ddd url(../img/Back-Top_Arrow.png) no-repeat center center;
+        // background-color: #aaa;
         -webkit-border-radius: 7px;
         -moz-border-radius: 7px;
         border-radius: 7px;
         -webkit-transition: 1s;
         -moz-transition: 1s;
         transition: 1s;
-        &:hover {
-            background-color: #777;
+
+        .rope {
+            background-image: url(../img/rope.png);
+            height: 1000px;
+            background-repeat: round;
+            background-position-x: -4px
         }
+
+        .baby {
+            background-image: url('../img/babycry.jpg');
+            background-repeat: round;
+            width: 75px;
+            height: 80px;
+        }
+        // &:hover {
+        //     background-color: #777;
+        // }
     }
 }
 
