@@ -4,57 +4,130 @@ title: 使用Galen进行Responsive Web自动化测试
 date: 2018-01-15
 categories: blog
 tags: [Web测试]
-description: Ethan Marcotte曾于2010年5月25日在A List Apart发表了文章Responsive Web Design，首次提出了响应式设计RWD(Responsive Web Design)的概念。其理念是，Web页面的设计能够自适应多种设备、平台和浏览器，同时减少缩放、平移和滚动。这样，无论用户正在使用电脑、平板、还是手机，Web页面都应该能够自动切换分辨率和图片尺寸等。这样，用户能够在不同设备上看到同样的网页。
+description: Galen是一款开源的测试框架，最初是用来测试Web应用的页面布局的。但是到现在，Galen已经是一款完整的功能测试的自动化测试框架了。
 
 ---
-### Galen简介
+### Galen是什么
+---
+[Galen](http://galenframework.com/) 是一款开源的测试框架，最初是用来测试Web应用的页面布局的。但是到现在，Galen已经是一款完整的功能测试的自动化测试框架了。它支持[Javascript](http://galenframework.com/docs/reference-javascript-tests-guide/) 和 [Java](http://galenframework.com/docs/reference-java-tests/)两种脚本语言.
 
-Galen 是一款开源的测试框架，用来测试Web应用的页面布局，也可以用作功能自动化测试工具。
 
-Galen 的响应式是这样进行响应式测试的：
+### Galen是如何工作的
+---
+使用Galen进行[Responsive Web](http://julysxy.com/blog/2018/01/14/responsive-web-testing/)测试，其工作原理为以下几步：
 1. 在浏览器打开Web页面
-2. 将浏览器窗口调整致目标尺寸
-3. 测试.specs文件中预先设定好的布局
+2. 调整浏览器窗口至目标尺寸
+3. 根据Galen specs文件中预先定义的标准来测试页面布局
 4. 输出测试报告
 
----
+
 ### 安装 Galen
+---
+在安装Galen之前，请确保您已经安装了Java version 1.8。
 
-安装Galen有命令行安装和手动安装两种方式，但在安装Galen之前，请确保已经安装了Java version 1.8。
+#### Step 1. 安装Galen
+1. 通过npm安装：```sudo npm install -g galenframework-cli```
+2. 在OS X 和 Linux平台手动安装：在[Galen官网](http://galenframework.com/download/)下载安装包，解压到你的目录。然后进入目录，执行以下命令：```sudo ./install.sh```
+3. 在Windows系统安装Galen：在windows系统，为了执行<code>galen.bat</code>文件，你需要手动设置环境变量。详情请参考文档：[How to configure Galen in Windows](http://mindengine.net/post/2014-01-08-configuring-galen-framework-for-windows/#.Wlx7x1T1U0o)。
 
-#### 1. 通过npm安装
+#### Step 2. 检查版本
+安装完成后，请用`galen -v`命令确认Galen版本。
+
+
+
+### Galen 测试 Level 1：编写第一个测试
+---
+在讲Galen之前，我们先小试牛刀，创建一个简单的测试。
+
+#### Step 1. 创建Project目录
+
+在本地创建目录，命名为`Galen-Demo1`。在Project中创建子目录`specs`。
+
+#### Step 2. 编写specs
+
+在specs中创建`home-page.gspec`文件。我们的测试对象为官方提供的[测试网页](http://samples.galenframework.com/tutorial1/tutorial1.html)，测试其header的height是否在30到100px之间。因此，`home-page.gspec`文件编写如下：
 
 ```
-sudo npm install -g galenframework-cli
+@objects
+    header        id        header
+
+= Main section =
+    header:
+        height 30 to 100px
 ```
 
+#### Step 3. Galen Config
 
-#### 2. 在OS X 和 Linux平台手动安装
-
-在[Galen官网](http://galenframework.com/download/)下载安装包，解压到你的目录。然后进入目录，执行以下命令：
-
-```
-sudo ./install.sh
-```
-
-#### 3. 在Windows系统安装Galen
-
-在windows系统，为了执行<code>galen.bat</code>文件，你需要手动设置环境变量。详情请参考文档：[How to configure Galen in Windows](http://mindengine.net/post/2014-01-08-configuring-galen-framework-for-windows/#.Wlx7x1T1U0o)。
-
-#### 4. 检查Galen 版本
-
-安装完成后，请确认一下Galen版本。
+在Project根目录下执行命令`galen config`, 命令输出如下内容:
 
 ```
-➜  Galen galen -v
-Galen Framework
-Version: 2.3.6
-JavaScript executor: Rhino 1.7 release 5 2015 01 29
+➜  Galen-Demo1 galen config
+Created config file: /home/Galen-Demo1/galen.config
+```
+这时，在您的Project根目录下自动生成一个名为`galen.config`的文件，就是Galen的配置文件，你可以在里面修改配置信息（此处无需修改，使用初始值）。
+
+#### Step 4. 执行测试并查看报告
+
+在命令行执行测试有两种命令方式：
+1. 执行test suite：`galen test <TestSuite_name> --htmlreport <ReportDirectory_name>`
+2. check specwen文件：`galen check <File_name> --url <url> --size <dimension> --htmlreport <ReportDirectory_name>`
+
+由于我们当前还没有test suite，所以这里选择第二种方式。
+```
+galen check specs/home-page.gspec 
+  --url http://samples.galenframework.com/tutorial1/tutorial1.html 
+  --size 1024x768 		
+  --htmlreport Reports
+```
+自动launch firefox浏览器，打来测试网站，然后按照specs文件中的规格进行check，最终自动在Project根目录下生成一个名为Reports的文件目录，执行结果就在`report.html`文件中，它长这样：
+<center>
+    <p><img src="{{site.baseurl }}/img/responsive-web-testing/image-011.png" align="center"></p>
+</center>
+
+到这里，我们的第一个简单的测试就完成了。
+
+### Galen 测试 Level 2：使用Test Suite
+---
+和大部分测试一样，我们需要把一组相关的测试封装成一个Test suite, 比如一组具有相同测试目的或运行在同一个环境下的测试就可以组成一个Test suite。对于Galen来说，一个`.test.js`文件就存放一个Test suite（*这里选的是JavaScript*）。更多详情，请参考官方文档 - [Galen Test Suite Syntax](http://galenframework.com/docs/reference-galen-test-suite-syntax/)。
+
+#### Step 1. 创建test目录
+在工程`Galen-Demo1`工程的根目录下创建一个test文件夹，用来存放测试脚本。
+
+#### Step 2. 添加test
+在test文件夹下添加`test.test.js`文件。（JavaScript脚本的具体写法不在本文详述，详情请参考[]())。
+
+```
+// Lets create a separate variable describing all devices 
+// as it might be used by other tests as well
+this.devices = {
+  mobile: {
+    deviceName: "mobile",
+    size: "400x700"
+  },
+  tablet: {
+    deviceName: "tablet",
+    size: "600x800"
+  },
+  desktop: {
+    deviceName: "desktop",
+    size: "1024x768"
+  }
+};
+
+forAll(devices, function (device) {
+  test("Home page on ${deviceName}", function (device){
+    var driver = createDriver("http://galenframework.com",
+                              device.size, 
+                              "chrome");
+  });
+});
 ```
 
+<center>
+    <p><img src="{{site.baseurl }}/img/responsive-web-testing/image-012.png" align="center"></p>
+</center>
 
 ---
-
 ### 使用JavaScript 编写Galen 测试
 
 Galen支持JavaScrpt和Java两种脚本语言。本文选用JavaScrpt编写Galen测试脚本，Galen提供了很多API，你可以去查看[官方文档](http://galenframework.com/docs/reference-javascript-tests-guide/)了解详情。当然，你也可以选择[Java编写脚本](http://galenframework.com/docs/reference-java-tests/)。
