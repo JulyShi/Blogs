@@ -4,20 +4,28 @@ title: 使用Galen进行Responsive Web自动化测试
 date: 2018-01-15
 categories: blog
 tags: [Web测试]
-description: Galen是一款开源的测试框架，是一款开源的测试框架，最初用来测试Web应用的页面布局。但是发展到现在，Galen已经是一款完整的功能测试的自动化测试框架了。
+description: Galen是一款开源的测试框架，是一款开源的测试框架，最初是被设计用来测试网站在不同浏览器上的表现，比如IE、Chrome,、Firefox等。但随着响应式设计的发展，Galen的作用就被扩展到测试网站页面布局分别分别在PC、Tablet和Mobile上是否正确，也就是响应式Web测试。
 
 ---
-## Galen是什么
+## 什么是Galen Framework
 ---
-[Galen](http://galenframework.com/) 是一款开源的测试框架，最初用来测试Web应用的页面布局。但是发展到现在，Galen已经是一款完整的功能测试的自动化测试框架了。它支持[Javascript](http://galenframework.com/docs/reference-javascript-tests-guide/) 和 [Java](http://galenframework.com/docs/reference-java-tests/)两种脚本语言。
+[Galen](http://galenframework.com/) 是一款开源的测试框架，最初是被设计用来测试网站在不同浏览器上的表现，比如IE、Chrome,、Firefox等。但随着响应式设计的发展，Galen的作用就被扩展到测试网站页面布局分别分别在PC、Tablet和Mobile上是否正确，也就是响应式Web测试。
+
+一言以蔽之，Galen Framework是一种特殊的语言和工具，用来在真实浏览器上测试Web页面的响应式布局和跨浏览器布局。
+
+Galen支持[Javascript](http://galenframework.com/docs/reference-javascript-tests-guide/) 和 [Java](http://galenframework.com/docs/reference-java-tests/)两种脚本语言。
 
 
 ## Galen是如何工作的
 ---
+
+just take a location and dimensions of element and verify it relatively to other elements on page.
+
 使用Galen进行[Responsive Web](http://julysxy.com/blog/2018/01/14/responsive-web-testing/)测试，其工作原理为以下几步：
-1. 在浏览器中打开Web页面
+1. 在指定浏览器中打开Web页面
 2. 调整浏览器窗口至目标尺寸
-3. 根据Galen specs文件中预先定义的标准来测试页面布局
+3. 获取页面元素的实际布局，如位置和大小等
+4. 将实际布局与Galen specs文件中预先定义的布局标准进行比对，从而测试页面布局
 4. 输出测试报告
 
 
@@ -56,15 +64,21 @@ description: Galen是一款开源的测试框架，是一款开源的测试框�
 ---
 在开始之前，我们先小试牛刀，创建一个简单的测试，让环境Run起来。
 
+在这里，我们设计一个简单的Case：
+```
+验证welcome页面的login按钮：
+① 按钮上text为“Login”
+② 按钮在PC、Mobile、tablet上的height
+③ 按钮在PC、Mobile、tablet上的width
+```
+
 #### Step 1. 创建Project目录
 
 在本地创建工程目录，命名为`Galen-Demo`。
 
 #### Step 2. 编写specs
 
-我们的测试对象为Galen官方提供的测试网站 - [Sample Website for Galen Framework](http://testapp.galenframework.com/)。
-
-在Project中创建子目录`specs`。在specs目录中创建`welcomePage.gspec`文件，用来编写Welcome页面的布局规格：
+按照Case的设计，首先编写spec。在Project中创建子目录`specs`。在specs目录中创建`welcomePage.gspec`文件，用来编写Welcome页面的布局规格：
 
 ```
 @objects
@@ -76,8 +90,24 @@ description: Galen是一款开源的测试框架，是一款开源的测试框�
 = Main section =
     login_button:
         text is "${login_button_text}"
+    
+    @on *
+        login_button:
+            height 45px
+
+    @on mobile
+        login_button:
+             width 300 to 350 px
+
+    @on tablet
+        login_button:
+             width 75 to 80 px
+
+    @on desktop
+        login_button:
+             width 75 to 80 px
 ```
-*Specs文件的编写方法不在本文介绍，请参考 - [Galen Specs Language Guide](http://galenframework.com/docs/reference-galen-spec-language-guide/)。*
+*Specs文件的编写方法不在本文介绍，详情请参考 - [Galen Specs Language Guide](http://galenframework.com/docs/reference-galen-spec-language-guide/)。*
 
 #### Step 3. Galen Config
 
@@ -87,7 +117,7 @@ description: Galen是一款开源的测试框架，是一款开源的测试框�
 ➜  Galen-Demo galen config
 Created config file: /home/Galen-Demo/galen.config
 ```
-这时，在您的Project根目录下自动生成一个名为`galen.config`的文件，就是Galen的配置文件，你可以在里面修改配置信息，此处使用初始值。
+这时，在您的Project根目录下自动生成一个名为`galen.config`的文件，就是Galen的配置文件，你可以修改具体的配置信息，此处使用初始值。
 
 #### Step 4. 执行测试并查看报告
 
@@ -95,17 +125,17 @@ Created config file: /home/Galen-Demo/galen.config
 1. 执行test suite：`galen test <TestSuite_name> --htmlreport <ReportDirectory_name>`
 2. Check spec文件：`galen check <File_name> --url <url> --size <dimension> --htmlreport <ReportDirectory_name>`
 
-由于我们当前还没有test suite，所以这里选择第二种方式。
+由于我们当前还没有test suite，所以这里选择第二种执行方式。
 ```
 galen check specs/welcomePage.gspec --url http://testapp.galenframework.com/ --size 1024x768  --htmlreport Reports
 ```
 
-程序会自动launch firefox浏览器，打来测试网站，然后按照specs文件中的规格进行check，最终自动在Project根目录下生成一个名为Reports的文件目录，执行结果就记录在`report.html`文件中，它长这样：
+这时，程序会按照config文件中的默认配置，自动launch firefox浏览器，打来测试网站。然后按照specs文件中的布局规格进行check，最终自动在Project根目录下生成一个名为Reports的文件目录，执行结果就记录在`report.html`文件中，它长这样：
 <center>
     <p><img src="{{site.baseurl }}/img/responsive-web-testing/image-012.png" align="center"></p>
 </center>
 
-到这里，我们环境就Run起来了。
+就这样，我们Galen测试环境就Run起来了。
 
 ### 第二部：使用Test Suite
 ---
@@ -164,7 +194,7 @@ galen test test/test01.test.js --htmlreport Reports
 
 ### 第三部：引入GalenPages
 ---
-Galen提供了[GalenPages JavaScript API](http://galenframework.com/docs/reference-galenpages-javascript-api/)，就是要将UI元素从Test cases中抽离，形成Page Object Model。这样，可读性更高，代码更易维护，同时亦可减少代码冗余。
+Galen提供了[GalenPages JavaScript API](http://galenframework.com/docs/reference-galenpages-javascript-api/)， 它是个轻量级的Selenium javascript框架。就是要将UI元素从Test cases中抽离，形成Page Object Model。这样，可读性更高，代码更易维护，同时亦可减少代码冗余。
 
 在此，我将设计两个测试Case：
 ```
