@@ -9,7 +9,7 @@ description: Galen是一款开源的测试框架，是一款开源的测试框�
 ---
 ## 什么是Galen Framework
 ---
-[Galen](http://galenframework.com/) 是一款开源的测试框架，最初是被设计用来测试网站在不同浏览器上的表现，比如IE、Chrome、Firefox等。但随着响应式设计的发展，Galen的作用就被扩展到测试网站页面布局分别分别在PC、Tablet和Mobile上是否正确，也就是响应式Web测试。
+[Galen](http://galenframework.com/) 是一款开源的测试框架，最初是被设计用来测试网站在不同浏览器上的表现，比如IE、Chrome、Firefox等。随着响应式设计的发展，Galen就被扩展到测试网站分别在PC、Tablet和Mobile上的页面布局，也就是响应式Web测试自动化测试。
 
 一言以蔽之，Galen Framework是一种特殊的语言和工具，用来在真实浏览器上测试Web页面的响应式布局和跨浏览器布局。
 
@@ -19,13 +19,11 @@ Galen支持[Javascript](http://galenframework.com/docs/reference-javascript-test
 ## Galen是如何工作的
 ---
 
-just take a location and dimensions of element and verify it relatively to other elements on page.
+使用Galen进行[Responsive Web](http://julysxy.com/blog/2018/01/14/responsive-web-testing/)测试，简单来讲，就是获取页面元素的位置和Size，从而验证该元素与其他元素的相对关系。具体来说，Galen的工作原理分为以下几步：
 
-使用Galen进行[Responsive Web](http://julysxy.com/blog/2018/01/14/responsive-web-testing/)测试，其工作原理为以下几步：
 1. 在指定浏览器中打开Web页面
 2. 调整浏览器窗口至目标尺寸
-3. 获取页面元素的实际布局，如位置和大小等
-4. 将实际布局与Galen specs文件中预先定义的布局标准进行比对，从而测试页面布局
+3. 根据Galen specs文件中预先定义的布局标准验证网站页面布局
 4. 输出测试报告
 
 
@@ -42,7 +40,7 @@ just take a location and dimensions of element and verify it relatively to other
 安装完成后，请用`galen -v`命令确认Galen版本。
 
 
-## 使用Galen进行Responsive Web测试的五部曲
+## 使用Galen进行Responsive Web测试四部曲
 ---
 <center>
     <p><img src="{{site.baseurl }}/img/responsive-web-testing/image-011.png" align="center"></p>
@@ -52,8 +50,7 @@ just take a location and dimensions of element and verify it relatively to other
 * 一：编写Page Specs，让环境Run起来
 * 二：使用Test Suite
 * 二：引入GalenPages
-* 四：数据与测试分离
-* 五：使用Selenium Grid进行分布式测试
+* 四：分离数据、使用Events，优化你的Project
 
 这里以[Sample Website for Galen Framework](http://testapp.galenframework.com/)网站的Welcome页作为测试对象。如图：
 <center>
@@ -265,7 +262,7 @@ this.welcomePage = $page("welcome", {
 ```
 
 #### Step 4. 在test文件中引入page
-为了与二中的例子区分开，我们在test目录下新建一个test suite，命名为`test02.test.js`.
+在test目录下新建一个test suite，命名为`test02.test.js`.
 
 首先，来文件开头位置引入welcomePage.js文件。
 ```
@@ -332,13 +329,16 @@ galen test test/test02.test.js --htmlreport Reports
 
 
 
-### 四：数据与测试分离
+### 四：分离数据、使用Events，优化你的Project
 
-在前面的介绍中，我们将`devices`定义在每个test suite中，并且在每个test Case中独立调用`createDriver`方法来创建Driver。如此代码冗余太多，并且当需要增加或修改device、broswer和url时，需要重新维护每一个test suite和test，维护成本太高。因此，我们需要将数据与测试分离。
+在前面的介绍中，我们将`devices`定义在每个test suite中，并且在每个test Case中独立调用`createDriver`方法来创建Driver。这样实现虽然没有问题，但是代码冗余太多，并且当需要增加或修改device、broswer或url时，每一个test都需要同步更新，维护成本太高。因此，需要优化你的Peoject:
 
-#### Step 1. 创建devices文件
+1. 测试与数据分离
+2. 使用Events初始化环境
 
-在test目录下创建`devices.js`, 将设备信息写进去。这样，以后无论是增加还是修改设备类型，都只需要维护这一个文件。
+#### Step 1. 测试与数据分离
+
+在test目录下创建`devices.js`, 将设备信息写进这个单独的文件里。这样，以后无论是增加还是修改设备类型，都只需要维护这一个文件。
 
 ```
 function Device(deviceName, size, tags) {
@@ -354,91 +354,59 @@ this.devices = {
 };
 ```
 
-#### Step 2. Set Environment
+#### Step 2. 使用Events初始化环境
 
-在test目录下创建`env.js`, 将createDriver封装在这个单独的文件里。这样在Case中只需要调用这个文件。大大减少代码冗余。
+Galen提供了四种events handler：
 
-```
-load("devices.js");
+Before test suite：在每个test suite执行之前执行
+After test suite：在每个test suite执行完之后执行
+Before test：在每个test执行之前执行
+After test：在每个test执行完后执行
 
-var url = "http://testapp.galenframework.com/";
-var browser = "chrome";
-
-function setEnv(device) {
-    return driver = createDriver(url,
-        device.size,
-        browser);
-}
-```
-
-#### Step 3. 在Case中引入Device和Set Env
-
-为了对比，这里我们将test02.test.js拷贝一份，命名为`test03.test.js`。并在test03.test.js中引入Device数据和Set Env方法。用例设计不变。
+在test目录下创建`events.js`，在`beforeTest`中初始化driver，在`afterTest`中关闭driver:
 
 ```
-load("devices.js");
-load("env.js");
-load("../pages/welcomePage.js");
-
-forAll(devices, function () {
-    test("Login Btn size of Welocome page on ${deviceName}", function (device){
-        var driver = setEnv(device);
-
-        var welcomepage = new welcomePage(driver);
-        if (!welcomepage.loginButton.exists()){
-            console.log("loginButton element don't exist")
-        }
-
-        checkLayout(driver, "specs/welcomePage.gspec", [device.tags]);
-        driver.quit();
-    });
-
+beforeTest(function () {
+    var driver = createDriver("http://testapp.galenframework.com/",
+        "1024x768",
+        "chrome");
+    session.put("driver", driver);
 });
 
-forOnly(devices.desktop, function () {
-    test("Login Btn color of Welocome page on desktop", function (device){
-        var driver = setEnv(device);
 
-        var welcomepage = new welcomePage(driver);
-        logged("Checking color for login btn", function () {
-            checkLayout(driver, "specs/welcomePage.gspec", ["usual"]);
-        });
-
-        logged("Checking color for highlighted login btn", function () {
-            welcomepage.hoverLoginButton();
-            checkLayout(driver, "specs/welcomePage.gspec", ["hovered"]);
-        });
-
-        driver.quit();
-    });
-
+afterTest(function () {
+    var driver = session.get("driver");
+    driver.quit();
 });
 ```
 
-#### Step 5. 执行test suite并查看报告
+#### Step 3. 优化你的测试
+将`test02.test.js`拷贝一份，命名为`test03.test.js`。 优化你的测试：load device.js和events.js，并在测试中使用`resize`方法重新定义浏览器窗口大小。
+
+```
+load("devices.js");
+load("event.js");
+
+......
+
+var driver = session.get("driver");
+resize(driver, device.size);
+```
+
+#### Step 4. 执行test suite并查看报告
 使用以下命令执行test suite：
 ```
 galen test test/test03.test.js --htmlreport Reports
 ```
-不难发现，其运行方式和执行结果与之前完全一致：
+执行如下：
 <center>
     <p><img src="{{site.baseurl }}/img/responsive-web-testing/image-016.png" align="center"></p>
 </center>
 
-
-### 五：使用Selenium Grid进行分布式测试
 ---
+其实，Galen还有很多高阶的用法，比如JavaScript注入、跨浏览器测试、以及使用Selenium Grid进行分布式测试等。一篇文章难以详述全部内容，但熟练掌握这四部曲，你就可以完成一个基本的Galen测试框架了。路漫漫其修远兮，更多内容，请和七姑娘一起去[Galen官网](http://galenframework.com/)探索吧。
 
-首先介绍一下grid ，selenium grid 是一种执行测试用例时使用的包含不同平台（windows、Linux、Android）的框架，并且
-
-这些平台是由一个中心点控制，这个中心点称之为HUB，而那些不同的平台称之为NODE。
-
-
-*未完待续。。。。。*
-
-*本文使用JavaScript作为编码语言，详情请参考[《使用JavaScript 编写Galen 测试》](http://julysxy.com/blog/2018/01/17/galen-with-javascript/)*)。
-
-
+[Galen-Demo](https://github.com/JulyShi/Galen-Demo.git)请移驾到我的github下载。
 
 
 
