@@ -9,7 +9,7 @@ description: Galen是一款开源的测试框架，是一款开源的测试框�
 ---
 ## 什么是Galen Framework
 ---
-[Galen](http://galenframework.com/) 是一款开源的测试框架，最初是被设计用来测试网站在不同浏览器上的表现，比如IE、Chrome,、Firefox等。但随着响应式设计的发展，Galen的作用就被扩展到测试网站页面布局分别分别在PC、Tablet和Mobile上是否正确，也就是响应式Web测试。
+[Galen](http://galenframework.com/) 是一款开源的测试框架，最初是被设计用来测试网站在不同浏览器上的表现，比如IE、Chrome、Firefox等。但随着响应式设计的发展，Galen的作用就被扩展到测试网站页面布局分别分别在PC、Tablet和Mobile上是否正确，也就是响应式Web测试。
 
 一言以蔽之，Galen Framework是一种特殊的语言和工具，用来在真实浏览器上测试Web页面的响应式布局和跨浏览器布局。
 
@@ -34,9 +34,9 @@ just take a location and dimensions of element and verify it relatively to other
 在安装Galen之前，请确保您已经安装了Java version 1.8。
 
 #### Step 1. 安装Galen
-1. 通过npm安装：```sudo npm install -g galenframework-cli```
-2. 在OS X 和 Linux平台手动安装：在[Galen官网](http://galenframework.com/download/)下载安装包，解压到你的目录。然后进入目录，执行以下命令：```sudo ./install.sh```
-3. 在Windows系统安装Galen：在windows系统，为了执行<code>galen.bat</code>文件，你需要手动设置环境变量。详情请参考文档 - [How to configure Galen in Windows](http://mindengine.net/post/2014-01-08-configuring-galen-framework-for-windows/#.Wlx7x1T1U0o)。
+- 方式一：通过npm安装：```sudo npm install -g galenframework-cli```
+- 方式二：在OS X 和 Linux平台手动安装：在[Galen官网](http://galenframework.com/download/)下载安装包，解压到你的目录。然后进入目录，执行以下命令：```sudo ./install.sh```
+- 方式三：在Windows系统安装Galen：在windows系统，为了执行<code>galen.bat</code>文件，你需要手动设置环境变量。详情请参考文档 - [How to configure Galen in Windows](http://mindengine.net/post/2014-01-08-configuring-galen-framework-for-windows/#.Wlx7x1T1U0o)。
 
 #### Step 2. 检查版本
 安装完成后，请用`galen -v`命令确认Galen版本。
@@ -49,18 +49,18 @@ just take a location and dimensions of element and verify it relatively to other
 </center>
 
 为了详细描述使用Galen进行Responsive Web测试的整个搭建过程，我将其称为五部曲：
-* 第一部：入门，让环境Run起来
-* 第二部：使用Test Suite
-* 第二部：引入GalenPages
-* 第四部：数据与测试分离
-* 第五部：使用Selenium Grid进行分布式测试
+* 一：编写Page Specs，让环境Run起来
+* 二：使用Test Suite
+* 二：引入GalenPages
+* 四：数据与测试分离
+* 五：使用Selenium Grid进行分布式测试
 
 这里以[Sample Website for Galen Framework](http://testapp.galenframework.com/)网站的Welcome页作为测试对象。如图：
 <center>
     <p><img src="{{site.baseurl }}/img/responsive-web-testing/image-014.png" align="center"></p>
 </center>
 
-### 第一部：入门，让环境Run起来
+### 一：编写Page Specs，让环境Run起来
 ---
 在开始之前，我们先小试牛刀，创建一个简单的测试，让环境Run起来。
 
@@ -87,7 +87,7 @@ just take a location and dimensions of element and verify it relatively to other
 @set
     login_button_text                   Login
 
-= Main section =
+= Login btn =
     login_button:
         text is "${login_button_text}"
     
@@ -122,8 +122,8 @@ Created config file: /home/Galen-Demo/galen.config
 #### Step 4. 执行测试并查看报告
 
 命令行执行测试有两种命令方式：
-1. 执行test suite：`galen test <TestSuite_name> --htmlreport <ReportDirectory_name>`
-2. Check spec文件：`galen check <File_name> --url <url> --size <dimension> --htmlreport <ReportDirectory_name>`
+- 第一种：执行test suite：`galen test <TestSuite_name> --htmlreport <ReportDirectory_name>`
+- 第二种：Check spec文件：`galen check <File_name> --url <url> --size <dimension> --htmlreport <ReportDirectory_name>`
 
 由于我们当前还没有test suite，所以这里选择第二种执行方式。
 ```
@@ -137,9 +137,9 @@ galen check specs/welcomePage.gspec --url http://testapp.galenframework.com/ --s
 
 就这样，我们Galen测试环境就Run起来了。
 
-### 第二部：使用Test Suite
+### 二：使用Test Suite
 ---
-和大部分测试一样，我们可以把一组相关的测试封装成一个Test suite，比如一组具有相同测试目的或运行在同一个环境下的测试就可以组成一个Test suite。对于Galen来说，一个`.test.js`文件就是一个[Test Suite](http://galenframework.com/docs/reference-galen-test-suite-syntax/)。
+和大部分测试一样，我们可以把一组相关的测试封装成一个Test suite，比如一组具有相同测试目的或运行在同一个环境下的测试就可以组成一个Test suite。Galen有自己定义[Test Suite](http://galenframework.com/docs/reference-galen-test-suite-syntax/)的语法规则，本文选用JavaScript作为脚本语言，因此一个`.test.js`文件就是一个Test Suite。
 
 在Suite中，我们设计一个测试Case：
 ```
@@ -192,9 +192,14 @@ galen test test/test01.test.js --htmlreport Reports
 
 
 
-### 第三部：引入GalenPages
+### 三：引入GalenPages
 ---
 Galen提供了[GalenPages JavaScript API](http://galenframework.com/docs/reference-galenpages-javascript-api/)， 它是个轻量级的Selenium javascript框架。就是要将UI元素从Test cases中抽离，形成Page Object Model。这样，可读性更高，代码更易维护，同时亦可减少代码冗余。
+
+与Selenium的Page Object不同的是，GalenPage有自己固定的格式： 
+```
+$page(pageName, primaryFields, [ secondaryFields ])
+```
 
 在此，我将设计两个测试Case：
 ```
@@ -214,8 +219,7 @@ this.welcomePage = $page("welcome", {
     loginButton: "#welcome-page .button-login",
 
     hoverLoginButton: loggedFunction ("Hover login button", function (){
-        var actions = new Actions(this.driver);
-        actions.moveToElement(this.findChild("xpath: //*[contains(@class, 'button-login')]")).perform();
+         this.loginButton.hover();
     })
 });
 ```
@@ -230,7 +234,7 @@ this.welcomePage = $page("welcome", {
 @set
     login_button_text                   Login
 
-= Main section =
+= Login btn =
     login_button:
         text is "${login_button_text}"
 
@@ -250,11 +254,9 @@ this.welcomePage = $page("welcome", {
         login_button:
              width 75 to 80 px
 
-
     @on usual
         login_button:
             color-scheme 2% white, 0 to 1 % black, =79% #2d6ca2
-
 
     @on hovered
          login_button:
@@ -263,7 +265,7 @@ this.welcomePage = $page("welcome", {
 ```
 
 #### Step 4. 在test文件中引入page
-为了与第二部中的例子区分开，我们在test目录下新建一个test suite，命名为`test02.test.js`.
+为了与二中的例子区分开，我们在test目录下新建一个test suite，命名为`test02.test.js`.
 
 首先，来文件开头位置引入welcomePage.js文件。
 ```
@@ -330,7 +332,7 @@ galen test test/test02.test.js --htmlreport Reports
 
 
 
-### 第四部：数据与测试分离
+### 四：数据与测试分离
 
 在前面的介绍中，我们将`devices`定义在每个test suite中，并且在每个test Case中独立调用`createDriver`方法来创建Driver。如此代码冗余太多，并且当需要增加或修改device、broswer和url时，需要重新维护每一个test suite和test，维护成本太高。因此，我们需要将数据与测试分离。
 
@@ -424,7 +426,7 @@ galen test test/test03.test.js --htmlreport Reports
 </center>
 
 
-### 第五部：使用Selenium Grid进行分布式测试
+### 五：使用Selenium Grid进行分布式测试
 ---
 
 首先介绍一下grid ，selenium grid 是一种执行测试用例时使用的包含不同平台（windows、Linux、Android）的框架，并且
