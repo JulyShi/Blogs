@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 使用Galen进行Responsive Web自动化测试
+title: 使用Galen进行Responsive Web自动化测试四部曲
 date: 2018-01-15
 categories: blog
 tags: [Web测试]
@@ -40,17 +40,29 @@ Galen支持[Javascript](http://galenframework.com/docs/reference-javascript-test
 安装完成后，请用`galen -v`命令确认Galen版本。
 
 
+<<<<<<< HEAD
 ## 使用Galen进行Responsive Web测试四部曲
+=======
+## Galen Responsive Web测试四部曲
+>>>>>>> master
 ---
 <center>
     <p><img src="{{site.baseurl }}/img/responsive-web-testing/image-011.png" align="center"></p>
 </center>
 
+<<<<<<< HEAD
 为了详细描述使用Galen进行Responsive Web测试的整个搭建过程，我将其称为五部曲：
 * 一：编写Page Specs，让环境Run起来
 * 二：使用Test Suite
 * 二：引入GalenPages
 * 四：分离数据、使用Events，优化你的Project
+=======
+为了详细描述使用Galen进行Responsive Web测试的整个过程，我将其称为四部曲：
+一：编写Page Specs，让环境Run起来
+二：使用Test Suite
+三：引入GalenPages
+四：分离数据、使用Events，优化你的Project
+>>>>>>> master
 
 这里以[Sample Website for Galen Framework](http://testapp.galenframework.com/)网站的Welcome页作为测试对象。如图：
 <center>
@@ -62,6 +74,7 @@ Galen支持[Javascript](http://galenframework.com/docs/reference-javascript-test
 在开始之前，我们先小试牛刀，创建一个简单的测试，让环境Run起来。
 
 在这里，我们设计一个简单的Case：
+
 ```
 验证welcome页面的login按钮：
 ① 按钮上text为“Login”
@@ -119,10 +132,14 @@ Created config file: /home/Galen-Demo/galen.config
 #### Step 4. 执行测试并查看报告
 
 命令行执行测试有两种命令方式：
-- 第一种：执行test suite：`galen test <TestSuite_name> --htmlreport <ReportDirectory_name>`
-- 第二种：Check spec文件：`galen check <File_name> --url <url> --size <dimension> --htmlreport <ReportDirectory_name>`
+
+- 第一种：执行test suite：
+`galen test <TestSuite_name> --htmlreport <ReportDirectory_name>`
+- 第二种：Check spec文件：
+`galen check <File_name> --url <url> --size <dimension> --htmlreport <ReportDirectory_name>`
 
 由于我们当前还没有test suite，所以这里选择第二种执行方式。
+
 ```
 galen check specs/welcomePage.gspec --url http://testapp.galenframework.com/ --size 1024x768  --htmlreport Reports
 ```
@@ -139,6 +156,7 @@ galen check specs/welcomePage.gspec --url http://testapp.galenframework.com/ --s
 和大部分测试一样，我们可以把一组相关的测试封装成一个Test suite，比如一组具有相同测试目的或运行在同一个环境下的测试就可以组成一个Test suite。Galen有自己定义[Test Suite](http://galenframework.com/docs/reference-galen-test-suite-syntax/)的语法规则，本文选用JavaScript作为脚本语言，因此一个`.test.js`文件就是一个Test Suite。
 
 在Suite中，我们设计一个测试Case：
+
 ```
 分别验证页面在Mobile、Tablet和Desktop上的布局是否与spec中定义的布局规格一致。 
 ```
@@ -147,6 +165,7 @@ galen check specs/welcomePage.gspec --url http://testapp.galenframework.com/ --s
 
 #### Step 2. 添加test
 在`test`文件夹下添加`test01.test.js`文件。编写如下测试代码：
+
 ```
 function Device(deviceName, size, tags) {
     this.deviceName = deviceName;
@@ -179,6 +198,7 @@ forAll(devices, function () {
 #### Step 4. 执行test suite并查看报告
 
 使用以下命令执行test suite：
+
 ```
 galen test test/test01.test.js --htmlreport Reports
 ```
@@ -194,11 +214,13 @@ galen test test/test01.test.js --htmlreport Reports
 Galen提供了[GalenPages JavaScript API](http://galenframework.com/docs/reference-galenpages-javascript-api/)， 它是个轻量级的Selenium javascript框架。就是要将UI元素从Test cases中抽离，形成Page Object Model。这样，可读性更高，代码更易维护，同时亦可减少代码冗余。
 
 与Selenium的Page Object不同的是，GalenPage有自己固定的格式： 
+
 ```
 $page(pageName, primaryFields, [ secondaryFields ])
 ```
 
 在此，我将设计两个测试Case：
+
 ```
 Case 1：分别验证Login按钮在Mobile、Tablet和Desktop上的宽和高，以及按钮上的文字。
 Case 2：验证Login按钮在Desktop上hover和没有hove时的颜色。
@@ -265,6 +287,7 @@ this.welcomePage = $page("welcome", {
 在test目录下新建一个test suite，命名为`test02.test.js`.
 
 首先，来文件开头位置引入welcomePage.js文件。
+
 ```
 load("../pages/welcomePage.js");
 ```
@@ -319,6 +342,7 @@ forOnly(devices.desktop, function () {
 
 #### Step 5. 执行test suite并查看报告
 使用以下命令执行test suite：
+
 ```
 galen test test/test02.test.js --htmlreport Reports
 ```
@@ -355,6 +379,7 @@ this.devices = {
 ```
 
 #### Step 2. 使用Events初始化环境
+<<<<<<< HEAD
 
 Galen提供了四种events handler：
 
@@ -373,6 +398,26 @@ beforeTest(function () {
     session.put("driver", driver);
 });
 
+=======
+
+Galen提供了四种events handler：
+
+- Before test suite：在每个test suite执行之前执行
+- After test suite：在每个test suite执行完之后执行
+- Before test：在每个test执行之前执行
+- After test：在每个test执行完后执行
+
+在test目录下创建`events.js`，在`beforeTest`中初始化driver，在`afterTest`中关闭driver:
+
+```
+beforeTest(function () {
+    var driver = createDriver("http://testapp.galenframework.com/",
+        "1024x768",
+        "chrome");
+    session.put("driver", driver);
+});
+
+>>>>>>> master
 
 afterTest(function () {
     var driver = session.get("driver");
@@ -395,6 +440,7 @@ resize(driver, device.size);
 
 #### Step 4. 执行test suite并查看报告
 使用以下命令执行test suite：
+
 ```
 galen test test/test03.test.js --htmlreport Reports
 ```
