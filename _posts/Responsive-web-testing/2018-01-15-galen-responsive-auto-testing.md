@@ -40,29 +40,17 @@ Galen支持[Javascript](http://galenframework.com/docs/reference-javascript-test
 安装完成后，请用`galen -v`命令确认Galen版本。
 
 
-<<<<<<< HEAD
-## 使用Galen进行Responsive Web测试四部曲
-=======
 ## Galen Responsive Web测试四部曲
->>>>>>> master
 ---
 <center>
     <p><img src="{{site.baseurl }}/img/responsive-web-testing/image-011.png" align="center"></p>
 </center>
 
-<<<<<<< HEAD
-为了详细描述使用Galen进行Responsive Web测试的整个搭建过程，我将其称为五部曲：
-* 一：编写Page Specs，让环境Run起来
-* 二：使用Test Suite
-* 二：引入GalenPages
-* 四：分离数据、使用Events，优化你的Project
-=======
 为了详细描述使用Galen进行Responsive Web测试的整个过程，我将其称为四部曲：
 一：编写Page Specs，让环境Run起来
 二：使用Test Suite
 三：引入GalenPages
 四：分离数据、使用Events，优化你的Project
->>>>>>> master
 
 这里以[Sample Website for Galen Framework](http://testapp.galenframework.com/)网站的Welcome页作为测试对象。如图：
 <center>
@@ -379,7 +367,6 @@ this.devices = {
 ```
 
 #### Step 2. 使用Events初始化环境
-<<<<<<< HEAD
 
 Galen提供了四种events handler：
 
@@ -397,27 +384,6 @@ beforeTest(function () {
         "chrome");
     session.put("driver", driver);
 });
-
-=======
-
-Galen提供了四种events handler：
-
-- Before test suite：在每个test suite执行之前执行
-- After test suite：在每个test suite执行完之后执行
-- Before test：在每个test执行之前执行
-- After test：在每个test执行完后执行
-
-在test目录下创建`events.js`，在`beforeTest`中初始化driver，在`afterTest`中关闭driver:
-
-```
-beforeTest(function () {
-    var driver = createDriver("http://testapp.galenframework.com/",
-        "1024x768",
-        "chrome");
-    session.put("driver", driver);
-});
-
->>>>>>> master
 
 afterTest(function () {
     var driver = session.get("driver");
