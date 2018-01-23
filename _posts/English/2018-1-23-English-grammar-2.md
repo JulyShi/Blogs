@@ -6,8 +6,6 @@ categories: blog
 tags: [English Learning]
 description: 动词的时态和语态
 ---
-## 非位于动词
----
 
 **定义**：在句子中不是谓语的动词叫做非谓语动词
 **非谓语动词有三种形式**：1. 动词不定式：to do，表示目的、将来
