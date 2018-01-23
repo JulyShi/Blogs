@@ -1,60 +1,12 @@
 ---
 layout: post
-title: 使用Galen进行Responsive Web自动化测试
-date: 2018-01-15
+title: 使用JavaScript 编写Galen 测试
+date: 2018-01-17
 categories: blog
 tags: [Web测试]
-description: Ethan Marcotte曾于2010年5月25日在A List Apart发表了文章Responsive Web Design，首次提出了响应式设计RWD(Responsive Web Design)的概念。其理念是，Web页面的设计能够自适应多种设备、平台和浏览器，同时减少缩放、平移和滚动。这样，无论用户正在使用电脑、平板、还是手机，Web页面都应该能够自动切换分辨率和图片尺寸等。这样，用户能够在不同设备上看到同样的网页。
+description: Galen支持JavaScrpt和Java两种脚本语言。本文选用JavaScrpt编写Galen测试脚本，Galen提供了很多API，你可以去查看官方文档了解详情。当然，你也可以选择Java编写脚本。
 
 ---
-### Galen简介
-
-Galen 是一款开源的测试框架，用来测试Web应用的页面布局，也可以用作功能自动化测试工具。
-
-Galen 的响应式是这样进行响应式测试的：
-1. 在浏览器打开Web页面
-2. 将浏览器窗口调整致目标尺寸
-3. 测试.specs文件中预先设定好的布局
-4. 输出测试报告
-
----
-### 安装 Galen
-
-安装Galen有命令行安装和手动安装两种方式，但在安装Galen之前，请确保已经安装了Java version 1.8。
-
-#### 1. 通过npm安装
-
-```
-sudo npm install -g galenframework-cli
-```
-
-
-#### 2. 在OS X 和 Linux平台手动安装
-
-在[Galen官网](http://galenframework.com/download/)下载安装包，解压到你的目录。然后进入目录，执行以下命令：
-
-```
-sudo ./install.sh
-```
-
-#### 3. 在Windows系统安装Galen
-
-在windows系统，为了执行<code>galen.bat</code>文件，你需要手动设置环境变量。详情请参考文档：[How to configure Galen in Windows](http://mindengine.net/post/2014-01-08-configuring-galen-framework-for-windows/#.Wlx7x1T1U0o)。
-
-#### 4. 检查Galen 版本
-
-安装完成后，请确认一下Galen版本。
-
-```
-➜  Galen galen -v
-Galen Framework
-Version: 2.3.6
-JavaScript executor: Rhino 1.7 release 5 2015 01 29
-```
-
-
----
-
 ### 使用JavaScript 编写Galen 测试
 
 Galen支持JavaScrpt和Java两种脚本语言。本文选用JavaScrpt编写Galen测试脚本，Galen提供了很多API，你可以去查看[官方文档](http://galenframework.com/docs/reference-javascript-tests-guide/)了解详情。当然，你也可以选择[Java编写脚本](http://galenframework.com/docs/reference-java-tests/)。

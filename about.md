@@ -24,7 +24,7 @@ header-img: "img/dance.jpg"
 七姑娘一直在路上。
 
 ---
-## 微信公众号：七姑娘手记
+## 微信公众号：七姑娘日记
 <i class="fa fa-weixin" aria-hidden="true"></i> 请扫描二维码关注公众号：
 <i class="fa fa-hand-o-down" aria-hidden="true"></i>
 <center>
