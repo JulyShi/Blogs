@@ -39,22 +39,18 @@ description: 动词的时态和语态
 
 1.只能用－ing形式作宾语的动词常用的有：dislike / delay / deny / mind / miss (错过), enjoy / escape (逃避) / excuse, practise / pardon / permit, suggest / stop / stand(忍受), consider , keep, advise / admit / acknowledge(承认) / allow / appreciate (欣赏、感激) / avoid (避免)，risk(冒险) / resist(抵制) / recommend(建议); finish / forbid, imagine。* The regulations forbid smoking in this room.* I delayed answering you owing to pressure of work.* We shall appreciate hearing from you again.2.只能用to do作宾语的动词有：afford, agree, aim, choose, dare, decide, decline(拒绝), refuse, desire, determine, fail, offer, expect, hope, wish, manage, plan, pretend, promise, seek, tend, threaten等。* Mary can’ t afford to buy this dress.* He determined to study hard.* He pretended not to see me when he came in.3.既能用－ing形式，又能用to do作宾语的动词分两种情况：a. like, love, prefer, hate; begin, start; continue; intend, attempt, bear等词用－ing形式和to do作宾语时意义相同。* He started learning/to learn English at the age of three．b. 意义不同的动词有	:
 
-| 动词           |  形式  |        意义 |
-|:------------- |:-----:| -----------:|
-| remember      | doing |  记得做过某事 |
-| remember      | to do |  记得去做某事 |
-| forget        | doing |  忘记做过某事 |
-| forget        | to do |  忘记去做某事 |
-| mean          | doing |  意味着做某事 |
-| mean          | to do |  想要做某事 |
-| go on         | doing |  继续做同一件事 |
-| go on         | to do |  继续做另一件事 |
-| want          | doing |      想要被* |
-| want          | to do |    想要做某事 |
-| need          | doing |      需要被* |
-| need          | to do |    需要做某事 |
-
-* The house wants repairing.
+* remember doing 记得做过某事
+* remember to do 记得去做某事
+* forget doing 忘记做过某事
+* forget to do 忘记去做某事
+* mean doing 意味着做某事
+* mean to do 想要做某事
+* go on doing 继续做同一件事
+* go on to do 继续做另一件事
+* want doing 想要被*
+* want to do 想要做某事
+* need doing 需要被*
+* need to do 需要做某事
 
 ### -ing形式作伴随状语 与 不定式作目的状语的区别作伴随状语的－ing形式与谓语动词的动作同时发生，且前面常常带一逗号；而作目的状语的不定式的动作要比谓语动词的动作后发生前面不能用逗号。* She wrote to the editor, hoping that the editor would be able to help her．She reached the top of the hill and stopped there to rest on a big rock．### 非谓语动词的否定式1. not/never doing sth
 2. not/never to do sth
