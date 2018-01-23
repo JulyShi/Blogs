@@ -9,16 +9,22 @@ header-img: "img/image6.jpg"
 
 
 <div id='tag_cloud'>
-<i class="fa fa-tag" aria-hidden="true"></i>
+
 {% for tag in site.tags %}
-<a href="#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">{{ tag[0] }}</a>
+<a href="#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+  <strong>{{ tag[0] }}</strong>
+</a>
 {% endfor %}
 </div>
 
 <ul class="listing">
 {% for tag in site.tags %}
-  <i class="fa fa-tag" aria-hidden="true"></i>
-  <li class="listing-seperator" id="{{ tag[0] }}">{{ tag[0] }}</li>
+  
+  <div class="listing-seperator" id="{{ tag[0] }}">
+    <i class="fa fa-tag" aria-hidden="true"></i>
+    <strong>{{ tag[0] }}</strong>
+  </div>
 {% for post in tag[1] %}
   <li class="listing-item">
   <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>

@@ -235,6 +235,13 @@ hr.small {
     background-size: cover;
     -o-background-size: cover;
     margin-bottom: 0px;
+    position: relative;
+    // bubbles scss update start
+    .bubbles {
+      position: absolute;
+      bottom: 0;
+    }
+    // bubbles scss update end
     /* 0 on mobile, changed the setting*/
     .site-heading, .post-heading, .page-heading {
         padding: 100px 0 50px;
@@ -641,7 +648,7 @@ body {
 
 
 .navbar-header .fa-home {
-    font-size: 30px;
+    font-size: 22px;
     margin-top: -10px;
 }
 
@@ -760,4 +767,17 @@ table caption {
 a img {
     cursor: -webkit-zoom-in;
     cursor: zoom-in;
+}
+
+.listing-seperator {
+  margin-top: 10px;
+  margin-left: -1em;
+}
+
+.fa {
+  font-size: 16px;
+
+  &.fa-weixin {
+    color:#7fd53e;
+  }
 }

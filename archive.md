@@ -11,8 +11,9 @@ header-img: "img/image8.jpg"
   {% capture y %}{{post.date | date:"%Y"}}{% endcapture %}
   {% if year != y %}
     {% assign year = y %}
-    <i class="fa fa-archive" aria-hidden="true"></i>
-    <li class="listing-seperator">{{ y }}</li>
+    
+    <div class="listing-seperator"><i class="fa fa-archive" aria-hidden="true"></i>
+    <strong>{{ y }}</strong></div>
   {% endif %}
   <li class="listing-item">
     <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>

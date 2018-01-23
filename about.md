@@ -41,8 +41,8 @@ github：[https://github.com/JulyShi](https://github.com/JulyShi)
 ---
 
 ## 联系
-
+<a href="mailto:julyfly321520@163.com">
 <i class="fa fa-envelope-o" aria-hidden="true"></i>
-mail：julyfly321520@163.com
-
+julyfly321520@163.com
+</a>
 
