@@ -769,15 +769,50 @@ a img {
     cursor: zoom-in;
 }
 
-.listing-seperator {
-  margin-top: 10px;
-  margin-left: -1em;
-}
-
 .fa {
   font-size: 16px;
 
   &.fa-weixin {
     color:#7fd53e;
+  }
+}
+
+.listing {
+
+  .listing-seperator {
+    margin-left: -1em;
+    &::after {
+      content: "";
+      width: 20%;
+      background: #ccc;
+      height: 1px;
+      display: block;
+      margin-top: 8px;
+    }
+  }
+
+  .listing-item {
+    margin: 5px 0;
+  }
+
+  .fa {
+    font-size: 18px;
+    margin-right: 8px;
+    &.fa-tag {
+      color: #aca480;
+    }
+    &.fa-archive {
+      color: #497d93;
+    }
+  }
+}
+
+#tag_cloud {
+  .fa {
+    font-size: 18px;
+    margin-right: 8px;
+    &.fa-tag {
+      color: #aca480;
+    }
   }
 }
