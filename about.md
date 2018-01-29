@@ -16,7 +16,7 @@ header-img: "img/dance.jpg"
 
 七姑娘一直在路上
 <center>
-    <p><img src="{{site.baseurl }}/img/me.jpeg" align="center"></p>
+    <img src="{{site.baseurl }}/img/me.jpeg" align="center">
 </center>
 
 ---
@@ -29,19 +29,25 @@ header-img: "img/dance.jpg"
 
 ---
 
-## 七姑娘在这里 <i class="fa fa-hand-o-down" aria-hidden="true"></i>
-
-**TW insights**：[http://insights.thoughtworks.cn/author/shixiangyang/](http://insights.thoughtworks.cn/author/shixiangyang/)
-
-<i class="fa fa-github" aria-hidden="true"></i>
-**github**：[https://github.com/JulyShi](https://github.com/JulyShi) 
-
-<span class="fa-stack fa-lg">
-   <i class="fa fa-circle fa-stack-2x"></i>
-   <i class="fa  fa-stack-1x fa-inverse">知</i>
-</span>
-**知乎**：[https://www.zhihu.com/people/julysxy/activities](https://www.zhihu.com/people/julysxy/activities)
-
+## 七姑娘在这里 
+  <a href="http://insights.thoughtworks.cn/author/shixiangyang/">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fa  fa-stack-1x fa-inverse">TW</i>
+    </span>
+  </a>
+  <a href="https://github.com/JulyShi">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-github fa-stack-2x" aria-hidden="true"></i>
+    </span>
+  </a>
+  <a href="https://www.zhihu.com/people/julysxy/activities">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fa  fa-stack-1x fa-inverse">知</i>
+    </span>
+  </a>
+  
 ---
 
 ## 有话对我说
