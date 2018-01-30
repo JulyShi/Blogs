@@ -610,44 +610,36 @@ body {
 
 /*  Back Top Button  */
 
-#back-top {
-    position: fixed;
-    bottom: 30px;
-    right: 0;
-    // margin-left: 880px;
-    z-index: 1;
-    transition: bottom 3s;
-    a {
-        //width: 54px;
-        //height: 54px;
-        display: block;
-        // background: #ddd url(../img/Back-Top_Arrow.png) no-repeat center center;
-        // background-color: #aaa;
-        -webkit-border-radius: 7px;
-        -moz-border-radius: 7px;
-        border-radius: 7px;
-        -webkit-transition: 1s;
-        -moz-transition: 1s;
-        transition: 1s;
+// #back-top {
+//     position: fixed;
+//     bottom: 30px;
+//     right: 0;
+//     z-index: 1;
+//     transition: bottom 3s;
+//     a {
+//         display: block;
+//         -webkit-border-radius: 7px;
+//         -moz-border-radius: 7px;
+//         border-radius: 7px;
+//         -webkit-transition: 1s;
+//         -moz-transition: 1s;
+//         transition: 1s;
 
-        .rope {
-            background-image: url(../img/rope.png);
-            height: 1000px;
-            background-repeat: round;
-            background-position-x: -4px
-        }
+//         .rope {
+//             background-image: url(../img/rope.png);
+//             height: 1000px;
+//             background-repeat: round;
+//             background-position-x: -4px
+//         }
 
-        .baby {
-            background-image: url('../img/babycry.png');
-            background-repeat: round;
-            width: 75px;
-            height: 80px;
-        }
-        // &:hover {
-        //     background-color: #777;
-        // }
-    }
-}
+//         .baby {
+//             background-image: url('../img/babycry.png');
+//             background-repeat: round;
+//             width: 75px;
+//             height: 80px;
+//         }
+//     }
+// }
 
 
 /*  Back Top Button  End */
@@ -965,4 +957,91 @@ a img {
   transform: scale(1);
   opacity: 1;
   pointer-events: auto;
+}
+
+.utilitytools {
+  position: fixed;
+  bottom: 60px;
+  right: 30px;
+  width: 40px;
+  a {
+    cursor: pointer;
+    display: inline-block;
+    color: #000;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5em;
+    text-align: center;
+    border-top: 1px solid #eee;
+    border-right: 1px solid #eee;
+    border-left: 1px solid #eee;
+
+    &:last-child {
+      border-bottom: 1px solid #eee;
+    }
+
+    i {
+      vertical-align: middle;
+    }
+
+    &:hover {
+      background: #2b79c3;
+      color: #fff;
+    }
+  }
+
+  .qrcode {
+    position: relative;
+    &:hover {
+      .tooltip-content {
+        opacity: 1;
+        pointer-events: auto;
+        width: 220px;
+        transition: width 0.5s;
+      }
+      .tooltip-text {
+        opacity: 1;
+        transition-delay: 0.5s;
+      }
+    }
+  }
+}
+
+.tooltip-content {
+    position: absolute;
+    z-index: 9999;
+    width: 0;
+    top: -15px;
+    right: 60px;
+    font-size: 20px;
+    line-height: 1.4;
+    text-align: center;
+    font-weight: 400;
+    color: #fffaf0;
+    background: transparent;
+    opacity: 0;
+    transform: translateY(-50%);
+    border: 1px solid #eee;
+    
+    .tooltip-text {
+      opacity: 0;
+    }
+    .tooltip-inner {
+      background: #fff;
+      color: #000;
+    }
+    &::after {
+      content: '';
+      bottom: 37%;
+      right: -20px;
+      border: solid transparent;
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-color: transparent;
+      border-left-color: #ccc;
+      border-width: 10px;
+      margin-left: -10px;
+    }
 }
