@@ -15,21 +15,22 @@ header-img: "img/dance.jpg"
 坚信简单的事情做久了，其实卓有成效
 
 七姑娘一直在路上
+
+<div id="#msg"></div>
 <center>
     <img src="{{site.baseurl }}/img/me.jpeg" align="center">
 </center>
 
----
-## 微信公众号：七姑娘日记
+<!-- ## 微信公众号：七姑娘日记
 <i class="fa fa-weixin" aria-hidden="true"></i> 请扫描二维码关注公众号：
 
 <center>
     <p><img src="{{site.baseurl }}/img/July-Wechat.jpg" align="center"></p>
 </center>
 
----
+--- -->
 
-## 七姑娘在这里 
+<!-- ## 七姑娘在这里 
   <a href="http://insights.thoughtworks.cn/author/shixiangyang/">
     <span class="fa-stack fa-lg">
       <i class="fa fa-circle fa-stack-2x"></i>
@@ -46,13 +47,13 @@ header-img: "img/dance.jpg"
       <i class="fa fa-circle fa-stack-2x"></i>
       <i class="fa  fa-stack-1x fa-inverse">知</i>
     </span>
-  </a>
+  </a> -->
   
----
+<!-- ---
 
 ## 有话对我说
 <a href="mailto:julyfly321520@163.com">
 <i class="fa fa-envelope-o" aria-hidden="true"></i>
 julyfly321520@163.com
-</a>
+</a> -->
 
