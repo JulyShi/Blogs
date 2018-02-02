@@ -228,7 +228,7 @@ hr.small {
 
 .intro-header {
     background: no-repeat center center;
-    background-color: #808080;
+    background-color: #9d749d; //#808080;
     background-attachment: scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -307,7 +307,7 @@ hr.small {
 @media only screen and (min-width: 768px) {
     .intro-header {
         .site-heading, .post-heading, .page-heading {
-            padding: 150px 0;
+            padding: 110px 0;
         }
     }
 }
@@ -899,7 +899,7 @@ a img {
 }
 
 .ch-img-1 {
-  background-image: url('../img/july1.jpg');
+  background-image: url('../img/july6.jpg');
   background-repeat: no-repeat;
 }
 
@@ -977,7 +977,7 @@ a img {
     border-top: 1px solid #eee;
     border-right: 1px solid #eee;
     border-left: 1px solid #eee;
-    background: #6fa9d0;
+    background: #9d749d;//#6fa9d0;
     color: #fff;
 
     &:last-child {
