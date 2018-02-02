@@ -1159,3 +1159,22 @@ $('.bubble-toggle').click(function () {
   return false;
 });
 bubbles();
+
+
+SimpleJekyllSearch({
+  searchInput: document.getElementById('search-input'),
+  resultsContainer: document.getElementById('results-container'),
+  json: '/search.json',
+  searchResultTemplate:'<li><a href="{url}"><i class= "fa fa-link"></i>{title}</a></li>'
+})
+
+$('.nav .fa-search').click(function(){
+  $('.search').addClass('search--open');
+  $('.overlay').show();
+  return false;
+});
+$('.overlay').click(function () {
+  $('.search').removeClass('search--open');
+  $(this).hide();
+  return false;
+});

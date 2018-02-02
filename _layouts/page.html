@@ -3,7 +3,7 @@ layout: default
 ---
 
 <!-- Page Header -->
-<header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
+<header class="intro-header" style="background-color:{% if page.header-bg %}{{page.header-bg}} {% else %} #6fa9d0{% endif %}">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -19,10 +19,10 @@ layout: default
                               <div class="ch-info-front ch-img-1"></div>
                               <div class="ch-info-back">
                                 <h3>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h3>
-                                <p>
+                                <!-- <p>
                                   <br>
                                   <a href="https://linkedin.com/in/{{site.linkedin_username}}">View on LinkedIn</a>
-                                </p>
+                                </p> -->
                               </div>
                             </div>
                           </div>

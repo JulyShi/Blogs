@@ -12,7 +12,7 @@ module.exports = function(grunt) {
           },
           dist: {
             files: {
-              'js/dist/vendor.js': ['js/vendor/jquery.js','js/vendor/bootstrap.js'],
+              'js/dist/vendor.js': ['js/vendor/jquery.js', 'js/vendor/bootstrap.js','js/vendor/simple-jekyll-search.js'],
               'js/dist/all.js': ['js/backtop.js', 'js/clean-blog.js', 'js/custom.js']
             }
           }

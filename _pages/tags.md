@@ -3,6 +3,8 @@ layout: page
 title: "Tags"
 description: "哈哈，你找到了我的所有的文章"  
 header-img: "img/image6.jpg"  
+header-bg: '#96b97d'
+permalink: /tags/
 ---
 
 <div id='tag_cloud'>

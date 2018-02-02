@@ -3,6 +3,8 @@ layout: page
 title: "About"
 description: "我是谁 "
 header-img: "img/dance.jpg"
+header-bg: '#8476ad'
+permalink: /about/
 ---
 我是谁
 

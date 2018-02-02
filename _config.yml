@@ -22,7 +22,7 @@ github_username: JulyShi
 facebook_username: 
 weibo_username:
 zhihu_username: julysxy
-linkedin_username:
+linkedin_username: shixiangyang
 tw_username: shixiangyang
 
 # Build settings  
@@ -63,3 +63,5 @@ bing_verify:
 sass:
     sass_dir: _sass
     style: compressed
+    
+include: [_pages]
