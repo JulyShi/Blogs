@@ -93,3 +93,5 @@ $('.overlay').click(function () {
   $(this).hide();
   return false;
 });
+
+hljs.initHighlightingOnLoad();
