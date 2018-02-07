@@ -963,8 +963,8 @@ a img {
 
 .utilitytools {
   position: fixed;
-  bottom: 70px;
-  right: 30px;
+  bottom: 30px;
+  right: 1%;
   width: 40px;
   a {
     cursor: pointer;
@@ -977,8 +977,8 @@ a img {
     border-top: 1px solid #eee;
     border-right: 1px solid #eee;
     border-left: 1px solid #eee;
-    background: #9d749d;//#6fa9d0;
-    color: #fff;
+    background-color: #fff;
+    color: #9d749d; // #fff;
 
     &:last-child {
       border-bottom: 1px solid #eee;
@@ -989,8 +989,9 @@ a img {
     }
 
     &:hover {
-      background: rgba(111, 169, 208,0.5);
+      // background: rgba(149, 132, 157, 0.5);
     }
+
   }
 
   .qrcode {
@@ -1005,6 +1006,18 @@ a img {
       }
     }
   }
+
+  .mail {
+      position: relative;
+      background-color: #9d749d;
+      color: #fff;
+
+      &:hover {
+          background: rgba(149, 132, 157, 0.5);
+      }
+  }
+
+
 }
 
 .tooltip-content {
@@ -1029,6 +1042,8 @@ a img {
     .tooltip-inner {
       background: #fff;
       color: #000;
+      font-size: 14px;
+      text-align: center;
     }
     &::after {
       content: '';
@@ -1050,10 +1065,11 @@ a img {
     position: fixed;
     z-index: -1;
     top: 0;
-    right: calc(8em + 1px);
+    right: 0;
+    //right: calc(8em + 1px);
     overflow: hidden;
     width: calc(30em - 1px);
-    height: 100vh;
+    height:  100%; //100vh;
     &::before {
       content: '';
       position: absolute;
@@ -1061,7 +1077,7 @@ a img {
       left: 0;
       width: 100%;
       height: 100%;
-      background: #fff;
+      background: #ffffff;
       transform: scale3d(0, 1, 1);
       transform-origin: 0% 50%;
       transition: transform 0.3s;
