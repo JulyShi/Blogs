@@ -963,7 +963,7 @@ a img {
 
 .utilitytools {
   position: fixed;
-  bottom: 100px;
+  bottom: 40px;
   right: 30px;
   width: 40px;
   a {
@@ -977,8 +977,8 @@ a img {
     border-top: 1px solid #eee;
     border-right: 1px solid #eee;
     border-left: 1px solid #eee;
-    background: #9d749d;//#6fa9d0;
-    color: #fff;
+    //background: #96819d;//#6fa9d0;
+    color: #9c739d; //#fff;
 
     &:last-child {
       border-bottom: 1px solid #eee;
