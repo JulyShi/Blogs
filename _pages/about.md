@@ -6,7 +6,9 @@ header-img: "img/dance.jpg"
 header-bg: '#8476ad'
 permalink: /about/
 ---
-我是谁
+嗨，很高兴认识你。
+
+我是谁?
 
 江湖人称"七姑娘"
 
