@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 第三篇：使用JavaScript 编写Galen 测试
+title: 使用JavaScript 编写Galen 测试
 date: 2018-01-17
 categories: blog
 tags: [响应式测试]

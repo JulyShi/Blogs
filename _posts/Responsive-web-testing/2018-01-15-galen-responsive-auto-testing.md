@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 第二篇：使用Galen进行Responsive Web自动化测试四部曲
+title: 使用Galen进行Responsive Web自动化测试四部曲
 date: 2018-01-15
 categories: blog
 tags: [响应式测试]
