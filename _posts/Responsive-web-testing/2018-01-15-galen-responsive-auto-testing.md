@@ -7,7 +7,7 @@ tags: [响应式测试]
 description: Galen是一款开源的测试框架，是一款开源的测试框架，最初是被设计用来测试网站在不同浏览器上的表现，比如IE、Chrome,、Firefox等。但随着响应式设计的发展，Galen的作用就被扩展到测试网站页面布局分别分别在PC、Tablet和Mobile上是否正确，也就是响应式Web测试。
 
 ---
-## 什么是Galen Framework
+## 1. 什么是Galen Framework
 ---
 [Galen](http://galenframework.com/) 是一款开源的测试框架，最初是被设计用来测试网站在不同浏览器上的表现，比如IE、Chrome、Firefox等。随着响应式设计的发展，Galen就被扩展到测试网站分别在PC、Tablet和Mobile上的页面布局，也就是响应式Web测试自动化测试。
 
@@ -16,7 +16,7 @@ description: Galen是一款开源的测试框架，是一款开源的测试框�
 Galen支持[Javascript](http://galenframework.com/docs/reference-javascript-tests-guide/) 和 [Java](http://galenframework.com/docs/reference-java-tests/)两种脚本语言。
 
 
-## Galen是如何工作的
+## 2. Galen是如何工作的
 ---
 
 使用Galen进行[Responsive Web](http://julysxy.com/blog/2018/01/14/responsive-web-testing/)测试，简单来讲，就是获取页面元素的位置和Size，从而验证该元素与其他元素的相对关系。具体来说，Galen的工作原理分为以下几步：
@@ -27,7 +27,7 @@ Galen支持[Javascript](http://galenframework.com/docs/reference-javascript-test
 4. 输出测试报告
 
 
-## 安装 Galen
+## 3. 安装 Galen
 ---
 在安装Galen之前，请确保您已经安装了Java version 1.8。
 
@@ -40,7 +40,7 @@ Galen支持[Javascript](http://galenframework.com/docs/reference-javascript-test
 安装完成后，请用`galen -v`命令确认Galen版本。
 
 
-## Galen Responsive Web测试四部曲
+## 4. Galen Responsive Web测试四部曲
 ---
 <center>
     <p><img src="{{site.baseurl }}/img/responsive-web-testing/image-011.png" align="center"></p>
@@ -57,7 +57,7 @@ Galen支持[Javascript](http://galenframework.com/docs/reference-javascript-test
     <p><img src="{{site.baseurl }}/img/responsive-web-testing/image-014.png" align="center"></p>
 </center>
 
-### 一：编写Page Specs，让环境Run起来
+### 4.1 编写Page Specs，让环境Run起来
 ---
 在开始之前，我们先小试牛刀，创建一个简单的测试，让环境Run起来。
 
@@ -139,7 +139,7 @@ galen check specs/welcomePage.gspec --url http://testapp.galenframework.com/ --s
 
 就这样，我们Galen测试环境就Run起来了。
 
-### 二：使用Test Suite
+### 4.2 使用Test Suite
 ---
 和大部分测试一样，我们可以把一组相关的测试封装成一个Test suite，比如一组具有相同测试目的或运行在同一个环境下的测试就可以组成一个Test suite。Galen有自己定义[Test Suite](http://galenframework.com/docs/reference-galen-test-suite-syntax/)的语法规则，本文选用JavaScript作为脚本语言，因此一个`.test.js`文件就是一个Test Suite。
 
@@ -197,7 +197,7 @@ galen test test/test01.test.js --htmlreport Reports
 
 
 
-### 三：引入GalenPages
+### 4.3 引入GalenPages
 ---
 Galen提供了[GalenPages JavaScript API](http://galenframework.com/docs/reference-galenpages-javascript-api/)， 它是个轻量级的Selenium javascript框架。就是要将UI元素从Test cases中抽离，形成Page Object Model。这样，可读性更高，代码更易维护，同时亦可减少代码冗余。
 
@@ -341,7 +341,7 @@ galen test test/test02.test.js --htmlreport Reports
 
 
 
-### 四：分离数据、使用Events，优化你的Project
+### 4.4 分离数据、使用Events，优化你的Project
 
 在前面的介绍中，我们将`devices`定义在每个test suite中，并且在每个test Case中独立调用`createDriver`方法来创建Driver。这样实现虽然没有问题，但是代码冗余太多，并且当需要增加或修改device、broswer或url时，每一个test都需要同步更新，维护成本太高。因此，需要优化你的Peoject:
 

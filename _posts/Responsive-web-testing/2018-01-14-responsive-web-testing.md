@@ -7,7 +7,7 @@ tags: [响应式测试]
 description: Ethan Marcotte曾于2010年5月25日在A List Apart发表了文章Responsive Web Design，首次提出了响应式设计RWD(Responsive Web Design)的概念。其理念是，Web页面的设计能够自适应多种设备、平台和浏览器，同时减少缩放、平移和滚动。这样，无论用户正在使用电脑、平板、还是手机，Web页面都应该能够自动切换分辨率和图片尺寸等。这样，用户能够在不同设备上看到同样的网页。
 
 ---
-### 什么是Responsive Web设计
+### 1. 什么是Responsive Web设计
 Ethan Marcotte曾于2010年5月25日在A List Apart发表了文章《[Responsive Web Design](http://alistapart.com/article/responsive-web-design)》，首次提出了**RWD**(Responsive Web Design)的概念。其理念是，Web页面的设计能够自适应多种设备、平台和浏览器，同时减少缩放、平移和滚动。
 <center>
     <p><img src="{{site.baseurl }}/img/responsive-web-testing/image-000.jpg" align="center"></p>
@@ -19,7 +19,7 @@ RWD概念提倡“一次设计，普遍适用”。让同一个网页设计自�
 * 对开发者来讲，只需要开发和维护一套代码，网站就能在“多个”平台上工作，这大大减少了架构设计的复杂度。
 
 
-### 几个关于屏幕的概念
+### 2. 几个关于屏幕的概念
 
 **(1). 屏幕尺寸** 是指手机屏幕对角线的物理尺寸。单位：英寸（inch），1英寸=2.54cm。
 
@@ -40,7 +40,7 @@ RWD概念提倡“一次设计，普遍适用”。让同一个网页设计自�
 | 极高密度（xhdpi）   | 720x1280       | 320 |
 | 超高密度（xxhdpi）| 1080x1920       | 480 |
 
-### Responsive Web测试测什么
+### 3. Responsive Web测试测什么
 
 首先来对比一下静态布局和Responsive布局：
 * **静态式布局**：窗口缩小后内容被遮挡时，拖动滚动条显示布局。不管在哪种设备，哪种浏览器上浏览都是一个样。移动设备上则显示太小或不全。
@@ -55,11 +55,11 @@ RWD概念提倡“一次设计，普遍适用”。让同一个网页设计自�
 5. **屏幕旋转**：当旋转屏幕时，布局、文字、图像和交互可能发生改变。
 6. **键盘**：对于移动平台，要关注键盘弹出时样式是否正常。
 
-### 几款好用的Responsive Web测试工具
+### 4. 几款好用的Responsive Web测试工具
 
 谷歌搜索了一下，国内外有很多Responsive Web测试工具，七姑娘尝试了其中的大部分，推荐5款亲测好用的工具给大家。
 
-#### 1. Chrome Device Toolbar
+#### 4.1 Chrome Device Toolbar
 
 <center>
     <p><img src="{{site.baseurl }}/img/responsive-web-testing/image-001.png" align="center"></p>
@@ -75,7 +75,7 @@ RWD概念提倡“一次设计，普遍适用”。让同一个网页设计自�
 
 **推荐指数：**⭐️⭐️⭐️⭐️
 
-#### 2. Sizzy
+#### 4.2 Sizzy
 [Sizzy](https://sizzy.co/)能够用来测试在一个页面中同时预览多个不同屏幕尺寸的页面，不用切换模式。
 <center>
     <p><img src="{{site.baseurl }}/img/responsive-web-testing/image-0001.png" align="center"></p>
@@ -89,7 +89,7 @@ RWD概念提倡“一次设计，普遍适用”。让同一个网页设计自�
 **推荐指数：**⭐️⭐️⭐️⭐️⭐️
 
 
-#### 3. Responsive
+#### 4.3 Responsive
 [Responsive](http://mattkersley.com/responsive/)能够用来测试网站在同一个屏幕上不同分辨率下的效果，这样，不需要切换模式，就可以轻松的查看网站在不同分辨率上的响应性。可以在一张网页上，同时显示不同分辨率屏幕的测试效果。
 <center>
     <p><img src="{{site.baseurl }}/img/responsive-web-testing/image-002.png" align="center"></p>
@@ -100,7 +100,7 @@ RWD概念提倡“一次设计，普遍适用”。让同一个网页设计自�
 
 **推荐指数：**⭐️⭐️⭐️
 
-#### 4. Browserstack
+#### 4.4 Browserstack
 [Browserstack](https://www.browserstack.com/responsive)支持跨浏览器的测试。browserstack利用Adobe Flash在你自己的浏览器提供了一个虚拟浏览器，不再局限于操作系统或浏览器版本。
 <center>
     <p><img src="{{site.baseurl }}/img/responsive-web-testing/image-003.png" align="center"></p>
@@ -125,7 +125,7 @@ RWD概念提倡“一次设计，普遍适用”。让同一个网页设计自�
 
 **推荐指数：**⭐️⭐️⭐️⭐️⭐️
 
-#### 5. I am mobile
+#### 4.5 I am mobile
 [I am mobile](http://www.iammobile.co.uk/)用来测试网站在各种不同移动窗口上的显示效果，同时会给出一些建议，让你的网站更具移动友好性。
 <center>
     <p><img src="{{site.baseurl }}/img/responsive-web-testing/image-006.png" align="center"></p>
