@@ -8,9 +8,9 @@ description: 突然想搞清楚各种字符编码
 
 ---
 
-你有没有想过，为什么你发给别人的文件会变成乱码？使用Windows记事本的“另存为”，会看到一个Encoding的字段，它有什么意义呢？
+你有没有想过，为什么你发给别人的文件会变成乱码？使用Windows记事本的“另存为”，会看到一个Encoding的字段，它有什么意义ComputerTech呢？
 <center>
-    <p><img src="{{site.baseurl }}/img/computerTech/image-001.png" align="center"></p>
+    <p><img src="{{site.baseurl }}/img/ComputerTech/image-001.png" align="center"></p>
 </center>	
 
 今天，就忽然想搞清楚各种字符集与字符编码。
@@ -56,7 +56,7 @@ Encoding意思是“编码”，与其对应的是Decoding，即“解码”。�
 * 其余为一些标点符号、运算符号等
 
 <center>
-    <p><img src="{{site.baseurl }}/img/computerTech/ASCII-Table.svg" align="center"></p>
+    <p><img src="{{site.baseurl }}/img/ComputerTech/ASCII-Table.svg" align="center"></p>
 </center>	
 
 **ASCII码排序**：数字的ASCII码 < 大写字母的ASCII码 < 小写字母的ASCII码。
@@ -91,7 +91,7 @@ GB2312的出现，基本满足了汉字的计算机处理需要，它所收录�
 GBK 采用双字节表示，总体编码范围为 8140-FEFE 之间，首字节在 81-FE 之间，尾字节在 40-FE 之间，剔除 XX7F 一条线。GBK 编码区分三部分：
 
 <center>
-    <p><img src="{{site.baseurl }}/img/computerTech/image-002.svg.png" align="center"></p>
+    <p><img src="{{site.baseurl }}/img/ComputerTech/image-002.svg.png" align="center"></p>
 </center>	
 
 ① 汉字区　包括：         
@@ -137,13 +137,13 @@ ASCII码的问题在于，尽管在0-127号字符的使用上达成了一致，�
 目前的Unicode字符分为[17组编排](上述16位统一码字符构成基本多文种平面)，0x0000 至 0x10FFFF，每组称为平面（Plane），而每平面拥有2^16 = 65536 个码位，共1114112个。然而目前只用了少数平面。
 
 <center>
-    <p><img src="{{site.baseurl }}/img/computerTech/image-003.png" align="center"></p>
+    <p><img src="{{site.baseurl }}/img/ComputerTech/image-003.png" align="center"></p>
 </center>	
 
 基本多文种平面（Basic Multilingual Plane, BMP），或称第0平面或0号平面（Plane 0），是Unicode中的一个最常用的编码区段。编码从U+0000至U+FFFF。以下是Unicode基本多文种平面的示意图。每个写着数字的格子代表256个码点。
 
 <center>
-    <p><img src="{{site.baseurl }}/img/computerTech/Roadmap_to_Unicode_BMP.svg" align="center"></p>
+    <p><img src="{{site.baseurl }}/img/ComputerTech/Roadmap_to_Unicode_BMP.svg" align="center"></p>
 </center>	
 
 UCS-2是指用两个字节对应一个字符的字符集；UCS-4则是指用四个字节对应一个字符的字符集。我们可以认为，目前为止Unicode有两个具体的字符集：UCS-2和UCS-4。 
