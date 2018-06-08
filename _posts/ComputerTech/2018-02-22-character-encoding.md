@@ -168,7 +168,7 @@ UTF包括UTF-7、UTF-8、UTF-16和UTF-32，后面的数字代表转换时最小�
 
 下表总结了编码规则，字母x表示可用编码的位。
 
-	Unicode符号范围(十六进制)  |        UTF-8编码方式(二进制）
+	Unicode符号范围(十六进制)  | UTF-8编码方式(二进制）
 	------------------------+-------------------------------------
 	0000 0000 - 0000 007F   | 0xxxxxxx
 	0000 0080 - 0000 07FF   | 110xxxxx 10xxxxxx
@@ -189,18 +189,13 @@ UTF包括UTF-7、UTF-8、UTF-16和UTF-32，后面的数字代表转换时最小�
 
 ---
 
-在HTTP中，与字符集和字符编码相关的消息头包含：`Accept-Charset` / `Accept-Encoding` / `Accept-Language` / `Content-Type` / `Content-Encoding` / `Content-Language`：
+在HTTP中，与字符集和字符编码相关的消息头包含：`Accept-Charset`  `Accept-Encoding`  `Accept-Language`  `Content-Type`  `Content-Encoding`  `Content-Language`：
 
 * **Accept-Charset**：浏览器申明自己接收的字符集，如：gb2312，utf-8。通常我们说Charset包括了相应的字符编码方案
-
 * **Accept-Encoding**：浏览器申明自己接收的编码方法，通常指定压缩方法，是否支持压缩，支持什么压缩方法，如：gzip，deflate
-
 * **Accept-Language**：浏览器申明自己接收的语言。语言跟字符集的区别：中文是语言，中文有多种字符集，比如big5，gb2312，gbk等等
-
 * **Content-Type**：WEB服务器告诉浏览器自己响应的对象的类型和字符集。例如：Content-Type: text/html; charset='gb2312'
-
 * **Content-Encoding**：WEB服务器表明自己使用了什么压缩方法（gzip，deflate）压缩响应中的对象。例如：Content-Encoding：gzip
-
 * **Content-Language**：WEB服务器告诉浏览器自己响应的对象的语言。
 
 ---
