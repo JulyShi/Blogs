@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 听牛人讲Session 之《敏捷项目交付实践：管理标准化》
+title: 听Session：《敏捷项目交付实践：管理标准化》
 date: 2018-06-11
 categories: blog
 tags: [听牛人讲Session系列]
