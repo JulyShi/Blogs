@@ -194,6 +194,6 @@ TW 是一种学习型和分享型组织文化，只要你愿意，有听不完�
 2.**引经据典，像讲故事一样讲Session**。不难发现，大牛们讲Session，总是会饮用很多经典名言或者案例，从而让自己的Session更加具有故事性，技术Session将因此不再枯燥。引用智者的经典，也会让你的Session犹如背靠巨人一样可靠。
 
 ---
-参考阅读：
-1. https://meia.me/course/169269?cid=&scid=
-2. http://www.woshipm.com/pmd/740796.html/comment-page-1
+参考阅读：<br>
+1.[https://meia.me/course/169269?cid=&scid=](https://meia.me/course/169269?cid=&scid=)<br>
+2.[http://www.woshipm.com/pmd/740796.html/comment-page-1](http://www.woshipm.com/pmd/740796.html/comment-page-1)<br>
