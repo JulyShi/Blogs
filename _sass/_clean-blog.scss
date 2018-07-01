@@ -336,10 +336,10 @@ hr.small {
 
 .post-preview > {
     a {
-        color: #404040;
+        color: #4A4A4A;
         &:hover, &:focus {
             text-decoration: none;
-            color: #2b79c3;
+            color: #111111;
         }
         > {
             .post-title {
@@ -358,11 +358,11 @@ hr.small {
     }
     .post-meta {
         font-family: 'Lora', 'Times New Roman', serif;
-        color: #696969;
-        text-align: right;
+        color: #9EABB3;//#696969;
+        text-align: left;
         font-size: 14px;
         font-style: italic;
-        margin-top: 0;
+        margin-top: 12px;
         > a {
             text-decoration: none;
             color: #404040;
@@ -395,9 +395,9 @@ hr.small {
 .post-content-preview {
     font-size: 13px;
     font-style: normal;
-    color: #616161; //#a3a3a3;
+    color: #3A4145; //#a3a3a3;
     &:hover {
-        color: #46A5ED;
+        color: #111111; //#46A5ED;
     }
 }
 
@@ -900,7 +900,8 @@ a img {
 }
 
 .ch-img-1 {
-  background-image: url('../img/july6.jpg');
+  background-image: url('../img/about/july6.jpg');
+  //  background-image: url('../img/about/july.jpg');
   background-repeat: no-repeat;
 }
 

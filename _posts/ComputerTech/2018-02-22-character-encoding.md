@@ -3,7 +3,7 @@ layout: post
 title: 突然想搞清楚各种字符编码
 date: 2018-02-22
 categories: blog
-tags: [计算机科学]
+tags: [Computer Science]
 description: 突然想搞清楚各种字符编码
 
 ---

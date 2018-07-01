@@ -3,7 +3,7 @@ layout: post
 title: Android APP性能测试浅析
 date: 2017-7-25
 categories: blog
-tags: [性能测试]
+tags: [APP Testing]
 description: APP性能问题一般分为：连接超时、闪退、卡顿、崩溃、黑白屏、网络劫持、交互性能差、CPU使用率问题、内存泄露等。针对这些性能问题，Android App性能测试应该覆盖......
 ---
 ### Android APP性能测什么？
