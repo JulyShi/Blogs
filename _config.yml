@@ -1,6 +1,6 @@
 # Site settings
 title: 七姑娘日记
-header-img: "img/Home.jpg"
+header-img: "img/Home5.jpg"
 tagline: "cn"  
 description: "七姑娘|七姑娘日记"
 baseurl: ""
@@ -45,7 +45,7 @@ defaults:
     values:
       layout: "post"
       author: "七姑娘"
-      header-img: "img/Home.jpg" # We don't want posts without a header image, that whould mean white on white
+      header-img: "img/Home1.jpg" # We don't want posts without a header image, that whould mean white on white
 
 # Comments 
 
