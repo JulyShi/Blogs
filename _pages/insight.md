@@ -2,7 +2,7 @@
 layout: page
 title: "Insights"
 description: "哇哦，你挖到了宝藏。 这里的文章全部转载于TW洞见"
-header-img: "img/image2.jpg"
+header-img: "img//header/Home6.jpg"
 header-bg: '#ef6a7d'
 permalink: /insight/
 ---

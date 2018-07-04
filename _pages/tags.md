@@ -2,7 +2,7 @@
 layout: page
 title: "Tags"
 description: "哈哈，你找到了我的所有的文章"  
-header-img: "img/image1.jpg"  
+header-img: "../img/header/Home4.jpg" 
 header-bg: '#6497B9'
 permalink: /tags/
 ---
