@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Tags"
+title: "Topic"
 description: "哈哈，你找到了我的所有的文章"  
 header-img: "../img/header/Home4.jpg" 
 header-bg: '#6497B9'

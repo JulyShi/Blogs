@@ -19,6 +19,9 @@
                 <li>
                     <a href="{{ site.baseurl }}/">Home</a>
                 </li>
+                <li>
+                    <a href="{{ '/about/' | prepend: site.baseurl }}">About</a>
+                </li>
                 <!-- <li>
                   <a href="{{ '/tags/' | prepend: site.baseurl }}">Topic</a>
                 </li> -->
@@ -38,9 +41,6 @@
                         </li>
                     {% endfor %}
                   </ul>
-                </li>
-                <li>
-                    <a href="{{ '/about/' | prepend: site.baseurl }}">About</a>
                 </li>
                 <li>
                     <a href="{{ '/archive/' | prepend: site.baseurl }}">Archive</a>

@@ -2,7 +2,7 @@
 layout: page
 title: "About"
 description: "我是谁 "
-header-img: "../img/header/Home4.jpg"
+header-img: "../img/header/Home12.jpg"
 header-bg: '#8476ad'
 permalink: /about/
 ---
