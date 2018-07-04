@@ -1173,7 +1173,7 @@ a img {
             position: absolute;
             left: 0px;
             top: 40px;
-            background: rgba(0,0,0,.2);
+            background: rgba(255,255,255,.15);
             width: auto;
             opacity: 0;
             visibility: hidden;
@@ -1225,7 +1225,7 @@ a img {
             position: absolute;
             top: 0px;
             right: 50%;
-            background: rgba(0,0,0,.2);
+            background: rgba(255,255,255,.15);
             width: auto;
             opacity: 0;
             visibility: hidden;
@@ -1241,10 +1241,6 @@ a img {
                 opacity: 1;
                 border-bottom: none;
                 border-left: 1px solid #ccc;
-
-                > a {
-                    color: #111;
-                }
             }
         }
     }
