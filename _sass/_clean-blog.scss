@@ -777,21 +777,42 @@ a img {
 }
 
 .listing {
-
+  list-style: none;
   .listing-seperator {
     margin-left: -1em;
-    &::after {
-      content: "";
-      width: 20%;
-      background: #ccc;
-      height: 1px;
-      display: block;
-      margin-top: 8px;
+    strong {
+      font-size: 2em;
+      color: #4A4A4A;
     }
+    //&::after {
+    //  content: "";
+    //  width: 80%;
+    //  background: #ccc;
+    //  height: 1px;
+    //  display: block;
+    //  margin-top: 8px;
+    //}
   }
 
   .listing-item {
-    margin: 5px 0;
+    margin: 10px 0;
+    padding-left: 23px;
+    &::after {
+      content: "";
+      width: 80%;
+      border-bottom: 1px dotted #ddd;
+      display: block;
+      margin-top: 8px;
+    }
+    .datetime {
+      width: 60px;
+      display: inline-block;
+      font-size: 17px;
+    }
+    >a {
+      font-size: 16px;
+      color: #3A4145;
+    }
   }
 
   .fa {
@@ -1184,7 +1205,7 @@ a img {
 
             li {
                 border: none;
-                border-bottom: 1px solid #ccc;
+                border-bottom: 1px dotted #ccc;
                 clear: both;
                 margin-top: -15px;
                 padding: 0;
@@ -1197,13 +1218,15 @@ a img {
                 &:hover {
                     ul.subsublist {
                         opacity: 1;
-                        right: 101%;
+                        right: 103%;
                         visibility: visible;
                     }
                 }
                 a {
                     padding: 0 20px;
                     white-space: nowrap;
+                    font-weight: normal;
+                    text-transform: none;
 
                     .fa-chevron-left {
                         position: absolute;
@@ -1239,8 +1262,6 @@ a img {
                 margin: 0;
                 padding: 0;
                 opacity: 1;
-                border-bottom: none;
-                border-left: 1px solid #ccc;
             }
         }
     }

@@ -13,11 +13,11 @@ permalink: /archive/
   {% if year != y %}
     {% assign year = y %}
  
-    <div class="listing-seperator"><i class="fa fa-archive" aria-hidden="true"></i>
-    <strong>{{ y }}</strong></div>
+    <li class="listing-seperator">
+    <strong>{{ y }}</strong></li>
   {% endif %}
   <li class="listing-item">
-    <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+    <i class="datetime" datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%b %-d"}}</i>
     <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
   </li>
 {% endfor %}
