@@ -3,6 +3,7 @@ layout: post
 title: 使用JavaScript 编写Galen 测试
 date: 2018-01-17
 categories: blog
+header-img: "../img/header/Home5.jpg"
 tags: [Web Responsive Testing]
 description: Galen支持JavaScrpt和Java两种脚本语言。本文选用JavaScrpt编写Galen测试脚本，Galen提供了很多API，你可以去查看官方文档了解详情。当然，你也可以选择Java编写脚本。
 

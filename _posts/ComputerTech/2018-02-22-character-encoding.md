@@ -2,6 +2,7 @@
 layout: post
 title: 突然想搞清楚各种字符编码
 date: 2018-02-22
+header-img: "../img/header/Home4.jpg"
 categories: blog
 tags: [Computer Science]
 description: 突然想搞清楚各种字符编码
