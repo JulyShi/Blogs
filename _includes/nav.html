@@ -19,8 +19,25 @@
                 <li>
                     <a href="{{ site.baseurl }}/">Home</a>
                 </li>
-                <li>
+                <!-- <li>
                   <a href="{{ '/tags/' | prepend: site.baseurl }}">Topic</a>
+                </li> -->
+                <li class="dropdown-topic">
+                  <a href="#">Topic</a>
+                  <ul class="sublist">
+                    {% for tag in site.tags %}
+                        <li class="dropdown">
+                            <a href="#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}"><i class="fa fa-chevron-left" aria-hidden="true"></i><strong>{{ tag[0] }}</strong></a>
+                            <ul class="subsublist">
+                                {% for post in tag[1] %}
+                                <li class="listing-item">
+                                    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                    {% endfor %}
+                  </ul>
                 </li>
                 <li>
                     <a href="{{ '/about/' | prepend: site.baseurl }}">About</a>
