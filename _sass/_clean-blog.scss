@@ -1001,7 +1001,7 @@ a img {
     border-right: 1px solid #eee;
     border-left: 1px solid #eee;
     background-color: #fff;
-    color: #9d749d; // #fff;
+    color: #3d4349; //#9d749d; // #fff;
 
     &:last-child {
       border-bottom: 1px solid #eee;
@@ -1032,11 +1032,11 @@ a img {
 
   .mail {
       position: relative;
-      background-color: #9d749d;
+      background-color: #3d4349; //#9d749d;
       color: #fff;
 
       &:hover {
-          background: rgba(149, 132, 157, 0.5);
+          background: rgba(54, 54, 54, 0.45);
       }
   }
 
