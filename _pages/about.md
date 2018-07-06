@@ -2,7 +2,7 @@
 layout: page
 title: "About"
 description: "我是谁 "
-header-img: "../img/header/Home12.jpg"
+header-img: "../img/header/Home6.jpg"
 header-bg: '#8476ad'
 permalink: /about/
 ---
@@ -55,7 +55,7 @@ permalink: /about/
 
 **2018年**：Web API自动化测试：[Supertest-Mocha-Chai-Grunt-Demo](https://github.com/JulyShi/Supertest-Mocha-Chai-Grunt-Demo.git)
 
-**2018年**：ThoughtWorks洞见小程序最初只是[嘉阳](https://meia.me/speaker/627)用来学习小程序开发的试玩版，我觉得很有趣，便将它推荐给[凯峰](https://insights.thoughtworks.cn/author/zhangkaifeng/)。2017年9月的某一天，凯峰忽然微信给我，问我要不要接了洞见开发的工作。就这样，在接下来的6个多月，我和嘉阳、张博，和爽琪，利用业余时间，将洞见网站从国外搬回了国内，从此洞见的访问速度达到了质的飞跃。2018年4月初，小程序正式上线了，这该是ThoughtWorks洞见的一个里程碑了。
+**2018年**：ThoughtWorks洞见小程序最初只是[嘉阳](https://blog.jyyan.xyz/)用来学习小程序开发的试玩版，我觉得很有趣，便将它推荐给[凯峰](https://www.instagram.com/zhangkf/)。2017年9月的某一天，凯峰忽然微信给我，问我要不要接了洞见开发的工作。就这样，在接下来的6个多月，我和嘉阳、张博，和爽琪，利用业余时间，将洞见网站从国外搬回了国内，从此洞见的访问速度达到了质的飞跃。2018年4月初，小程序正式上线了，这该是ThoughtWorks洞见的一个里程碑了。
 
 围观，请戳：[ThoughtWorks洞见网站](https://insights.thoughtworks.cn/)<br>
 体验**ThoughtWorks Insinghts小程序**，请扫二维码：

@@ -3,7 +3,7 @@ layout: post
 title: Responsive Web测试
 date: 2018-01-14
 categories: blog
-header-img: "../img/header/Home5.jpg"
+header-img: "../img/header/Home3.jpg"
 tags: [5. Web响应式测试]
 description: Ethan Marcotte曾于2010年5月25日在A List Apart发表了文章Responsive Web Design，首次提出了响应式设计RWD(Responsive Web Design)的概念。其理念是，Web页面的设计能够自适应多种设备、平台和浏览器，同时减少缩放、平移和滚动。这样，无论用户正在使用电脑、平板、还是手机，Web页面都应该能够自动切换分辨率和图片尺寸等。这样，用户能够在不同设备上看到同样的网页。
 

@@ -4,7 +4,7 @@ title: 听Session：《敏捷项目交付实践：管理标准化》
 date: 2018-06-11
 categories: blog
 tags: [3. 大咖讲Session]
-header-img: "../img/header/Home7.jpg"
+header-img: "../img/header/Home3.jpg"
 description: 
 
 ---

@@ -3,7 +3,7 @@ layout: post
 title: 读《极简主义》
 date: 2018-1-7
 categories: blog
-header-img: "../img/header/Home12.jpg"
+header-img: "../img/header/Home2.jpg"
 tags: [2. 挑灯夜读]
 description: 目标太多、精力分散。正当七姑娘抓耳挠腮、被满满的学习清单压得喘不过气的时候，幸得有书君推荐了一本实用的好书《极简主义：风靡欧美的工作和生活理念》。
 ---
