@@ -4,7 +4,7 @@ title: 读《人人都能用英语》
 date: 2018-6-30
 categories: blog
 tags: [2. 挑灯夜读]
-header-img: "../img/header/Home2.jpg"
+header-img: "../img/header/Home7.jpg"
 description: 前几天，邱大师推荐我读一读李笑来的《人人都能用英语》，大概翻了三分钟，我就被书中朴实无华的观点吸引了，作者仿佛击中了我学习英语的所有痛点。于是，我花了一晚上时间读完它，却仍旧不过瘾，便写下此文，以对自己进行深刻的剖析。
 ---
 

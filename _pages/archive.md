@@ -2,7 +2,7 @@
 layout: page
 title: "Archive"
 description: "故事是这样发生的"
-header-img: "../img/header/Home2.jpg"
+header-img: "../img/header/Home8.jpg"
 permalink: /archive/
 ---
 
