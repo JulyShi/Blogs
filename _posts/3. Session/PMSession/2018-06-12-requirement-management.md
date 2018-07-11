@@ -3,7 +3,7 @@ layout: post
 title: 听Session：《需求分析与管理》
 date: 2018-06-12
 categories: blog
-tags: [3. 大咖讲Session]
+tags: [大咖讲Session]
 header-img: "../img/header/Home1.jpg"
 description: 
 

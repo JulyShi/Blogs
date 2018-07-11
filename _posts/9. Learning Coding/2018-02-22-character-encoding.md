@@ -4,7 +4,7 @@ title: 有趣的字符编码
 date: 2018-02-22
 header-img: "../img/header/Home2.jpg"
 categories: blog
-tags: [9. 从头学编码]
+tags: [从头学编码]
 description: 突然想搞清楚各种字符编码
 
 ---

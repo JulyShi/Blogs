@@ -4,7 +4,7 @@ title: 使用Galen进行Responsive Web自动化测试四部曲
 date: 2018-01-15
 header-img: "../img/header/Home3.jpg"
 categories: blog
-tags: [5. Web响应式测试]
+tags: [Web响应式测试]
 description: Galen是一款开源的测试框架，是一款开源的测试框架，最初是被设计用来测试网站在不同浏览器上的表现，比如IE、Chrome,、Firefox等。但随着响应式设计的发展，Galen的作用就被扩展到测试网站页面布局分别分别在PC、Tablet和Mobile上是否正确，也就是响应式Web测试。
 
 ---

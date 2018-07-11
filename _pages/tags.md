@@ -2,7 +2,7 @@
 layout: page
 title: "Topic"
 description: "哈哈，你找到了我的所有的文章"  
-header-img: "../img/header/Home4.jpg" 
+header-img: "../img/header/Home7.jpg" 
 header-bg: '#6497B9'
 permalink: /tags/
 ---
@@ -11,7 +11,6 @@ permalink: /tags/
 
 {% for tag in site.tags %}
 <a href="#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">
-  <i class="fa fa-tag" aria-hidden="true"></i>
   <strong>{{ tag[0] }}</strong>
 </a>
 {% endfor %}
@@ -22,7 +21,6 @@ permalink: /tags/
 
   
   <div class="listing-seperator" id="{{ tag[0] }}">
-    <i class="fa fa-tag" aria-hidden="true"></i>
     <strong>{{ tag[0] }}</strong>
   </div>
 
