@@ -1,3 +1,4 @@
+$(function(){
 var $bubbles = $('.bubbles');
 
 function bubbles() {
@@ -96,9 +97,16 @@ $('.overlay').click(function () {
 
 hljs.initHighlightingOnLoad();
 
-var cTarget = decodeURI(location.hash),
-    pureTarget = cTarget.substr(1);
-if (cTarget && pureTarget) {
-    $(cTarget).removeClass('hidden');
-    $(['data-blongs='+pureTarget]).removeClass('hidden');
-}
+    function displayTargetArticle (groupName) {
+        if (groupName) {
+            $('.taglist').children().addClass('hidden');
+            $('[data-blongs='+groupName+']').removeClass('hidden');
+        }
+    }
+
+    $(document).on('click','li.dropdown',function(){
+        displayTargetArticle($(this).find('>a').attr('title'));
+    });
+
+    displayTargetArticle(decodeURI(location.hash).substr(1));
+});

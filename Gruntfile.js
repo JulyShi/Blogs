@@ -12,8 +12,8 @@ module.exports = function(grunt) {
           },
           dist: {
             files: {
-              'js/dist/vendor.js': ['js/vendor/jquery.js', 'js/vendor/bootstrap.js','js/vendor/simple-jekyll-search.js'],
-              'js/dist/all.js': ['js/backtop.js', 'js/clean-blog.js', 'js/custom.js']
+              'js/dist/vendor.min.js': ['js/vendor/jquery.js', 'js/vendor/bootstrap.js','js/vendor/simple-jekyll-search.js'],
+              'js/dist/all.min.js': ['js/backtop.js', 'js/clean-blog.js', 'js/custom.js']
             }
           }
         },
@@ -94,5 +94,6 @@ module.exports = function(grunt) {
 
     // Default task(s).
   grunt.registerTask('default', ['clean','concat','uglify','usebanner']);
+  grunt.registerTask('dev', ['clean','concat','usebanner']);
 
 };

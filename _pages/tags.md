@@ -17,16 +17,16 @@ permalink: /tags/
 </div>
 ---
 -->
-<ul class="listing">
+<ul class="listing taglist">
 {% for tag in site.tags %}
 
   
-  <div class="listing-seperator hidden" id="{{ tag[0] }}">
+  <div class="listing-seperator hidden" data-blongs="{{tag[0] | slugify: 'pretty' }}">
     <strong>{{ tag[0] }}</strong>
   </div>
 
 {% for post in tag[1] %}
-  <li class="listing-item hidden" data-blongs="{{tag[0]}}">
+  <li class="listing-item hidden" data-blongs="{{tag[0] | slugify: 'pretty' }}">
   <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
   </li>
