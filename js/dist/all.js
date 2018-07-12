@@ -1180,3 +1180,10 @@ $('.overlay').click(function () {
 });
 
 hljs.initHighlightingOnLoad();
+
+var cTarget = decodeURI(location.hash),
+    pureTarget = cTarget.substr(1);
+if (cTarget && pureTarget) {
+    $(cTarget).removeClass('hidden');
+    $(['data-blongs='+pureTarget]).removeClass('hidden');
+}
