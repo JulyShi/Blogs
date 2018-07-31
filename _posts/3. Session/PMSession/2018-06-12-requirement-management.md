@@ -10,10 +10,6 @@ description:
 ---
 听了我司成都Office资深项目经理王彪在“meia美啊”平台分享的Session，名为《需求分析与管理：“二流”分析法和实践》，感触很深，现对其进行归纳总结。Session视频可以在[这里👉](https://meia.me/course/169441?cid=&scid=)观看。
 
-<center>
-    <p><img src="{{site.baseurl }}/img/session/image007.jpg" align="center"></p>
-</center>
-
 
 我所在的Adventure项目是正在开发一款广告管理系统。本文以Adventure简化版为例，运用Session中讲到的方法进行分析。
 

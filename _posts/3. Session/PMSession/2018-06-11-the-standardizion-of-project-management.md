@@ -10,15 +10,6 @@ description:
 ---
 刚刚听了我司武汉Office资深项目经理万学凡同事于2017年6月在“meia美啊”平台分享的关于敏捷项目管理的Session，名为《项目交付敏捷实践：管理标准化》，颇有感触。现对其内容加以整理，以便温故知新。同时基于自己当前项目进行一些思考。原始的Session视频可以在[这里👉](https://meia.me/course/169269?cid=&scid=)观看。
 
-<center>
-    <p><img src="{{site.baseurl }}/img/session/image000.jpg" align="center"></p>
-</center>
-
-<!--
-<video src="https://meia.me/course/169269?cid=&scid=" width="100%" height="100%" controls="controls">
-</video>
--->
-
 # Session讲了什么
 
 ---
