@@ -9,6 +9,8 @@ description: 敏捷开发中的Defects管理
 
 ---
 
+*[本文发表于ThoughtWorks洞见](https://insights.thoughtworks.cn/about-defects/)*
+
 在过去的几个月，我做了一些实践，通过整理、讨论和分析项目上的Defects情况，来探索质量管理中的待改进点。最终发现，Defects实际上给质量管理带来了很多的启示。
 
 当然，要讨论Defects，首先要使团队对Defects有一致的理解。我查了很多资料，也没有找到对"Defects"一词的明确定义，大部分人将"Defects"等同于“Bug”。
@@ -31,7 +33,7 @@ description: 敏捷开发中的Defects管理
 
 ---
 
-# Defects的产生与应对策略
+## Defects的产生与应对策略
 
 产品质量是团队共同的责任，软件开发是一个过程，任何环节都有可能产生质量问题，但每个环节的问题都应该有最恰当的处理方式。
 
@@ -70,7 +72,7 @@ description: 敏捷开发中的Defects管理
 
 ---
 
-# Defects对质量管理的启示
+## Defects对质量管理的启示
 
 Defects并不是独立存在的，它或多或少反映出了项目管理和开发过程中存在的问题，这些问题都可能对质量产生影响。比如：线上问题的走势，是否能够反映出产品质量的变化；分析每个迭代Defects的数据及产生的原因，有助于发现开发过程中出现的问题，及时地进行风险把控；
 

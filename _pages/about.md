@@ -45,6 +45,8 @@ permalink: /about/
 
 [《项目实施DevOps时，我们是如何做测试的》](https://insights.thoughtworks.cn/qa-in-devops/) 2017年11月9日 发表于ThoughtWorks洞见
 
+[《Defects的启示》](https://insights.thoughtworks.cn/about-defects/) 2018年9月17日 发表于ThoughtWorks洞见
+
 <hr>
 
 <h3>我的项目</h3>
