@@ -89,9 +89,9 @@ $('.nav .fa-search').click(function(){
   $('.overlay').show();
   return false;
 });
-$('.overlay').click(function () {
+$('#close-search').click(function () {
   $('.search').removeClass('search--open');
-  $(this).hide();
+  $('.overlay').hide()
   return false;
 });
 
