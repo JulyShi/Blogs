@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 精益价值树
-date: 2020-05-28
+date: 2020-05-27
 header-img: "../img/header/Home6.jpg"
 categories: blog
 tags: [工具箱]
