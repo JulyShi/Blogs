@@ -1,11 +1,11 @@
 ---
 layout: post
-title: 你如何成长？
+title: 我在ThoughtWorks的成长心得
 date: 2020-05-20
 header-img: "../img/header/Home6.jpg"
 categories: blog
-tags: [技能提升]
-description: 你如何成长？
+tags: [测试锦囊]
+description: 我在ThoughtWorks的成长心得
 ---
 
 几天前，同事小A发来微信。
