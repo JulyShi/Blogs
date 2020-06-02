@@ -52,9 +52,13 @@ description: 精益价值树
 
 ### 学习案例
 
-未完待续......
+我尝试用“精益价值树”来分析我个人成长的愿景和战略。我发现难点是：目标比较多，每一个目标下的措施也比较多，无法在这个树中体现出时间概念。
+<center>
+    <p><img width="100%" src="{{site.baseurl }}/img/learning-skill/img-0007.jpg" align="center"></p>
+</center>
 
 ---
 参考：
 
-[《以愿景与目标驱动，让创新无处不在》](https://insights.thoughtworks.cn/lean-value-tree/)  ThoughtWorks洞见
+* [《以愿景与目标驱动，让创新无处不在》](https://insights.thoughtworks.cn/lean-value-tree/)  ThoughtWorks洞见
+* EDGE-精益企业的投资管理指南》ThoughtWorks
