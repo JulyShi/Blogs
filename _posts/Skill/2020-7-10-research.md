@@ -71,7 +71,7 @@ description:
 		* 环境污染：因空气及水源的污染；铅中毒或营养不良等因素影响。
 		* 智障者大约有1/3会合并癫痫，1/5合并脑性麻痹，同时容易合并呼吸、消化系统疾病、听力、视力等感官障碍，极须专业人员之评估与治疗。
 
-* **智力障碍** 分为内因和外因：
+* **精神障碍** 分为内因和外因：
 	* 内因：遗传因素、中枢神经感染与外伤
 	* 外因：人格障碍、应激障碍、及意识、认知、行为等心理学因素
 
@@ -112,7 +112,7 @@ description:
 * 书籍：[豆瓣读书](https://book.douban.com/subject/6527099/)、[微信读书](https://weread.qq.com/web/reader/56e32d807172688e56eb098)
 * 影像资料：[豆瓣电影](https://movie.douban.com/subject/1292720/)、[西瓜视频](https://www.ixigua.com/6766185273349898755?logTag=HQjvwzHCqpWmakA5q4CRM/)、[哔哩哔哩](https://www.bilibili.com/video/BV1XE411Z761?p=5)等
 
-通过这些渠道，我们搜集了30个问题域（我们将自闭症部分单独拆了出去）。
+通过这些渠道，我们搜集了30个问题域（由于自闭症本身就是一大类学科，所以我们将其单独拆了出去，这里只保留了智力障碍和精神障碍两种类型）。
 <center>
     <p><img width="100%" src="{{site.baseurl }}/img/research/img-007.jpg" align="center"></p>
 </center>
