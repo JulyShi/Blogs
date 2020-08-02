@@ -42,10 +42,11 @@ permalink: /about/
 <hr>
 
 <h3>我的文章</h3>
-
-[《项目实施DevOps时，我们是如何做测试的》](https://insights.thoughtworks.cn/qa-in-devops/) 2017年11月9日 发表于ThoughtWorks洞见
+[《敏捷项目中的探索性测试》](https://insights.thoughtworks.cn/exploratory-testing-in-agile/) 2020年07月21日 发表于ThoughtWorks洞见
 
 [《Defects的启示》](https://insights.thoughtworks.cn/about-defects/) 2018年9月17日 发表于ThoughtWorks洞见
+
+[《项目实施DevOps时，我们是如何做测试的》](https://insights.thoughtworks.cn/qa-in-devops/) 2017年11月9日 发表于ThoughtWorks洞见
 
 <hr>
 
